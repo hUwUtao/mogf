@@ -1,0 +1,156 @@
+{
+  "format": "mogf.project",
+  "version": 1,
+  "project_id": "planar-scene-mvp",
+  "requirements": [],
+  "assets": {},
+  "states": {},
+  "compositions": {
+    "main": {
+      "size": [1280, 720],
+      "fps": { "n": "30", "d": "1" },
+      "duration": { "n": "4", "d": "1" },
+      "layers": [
+        {
+          "kind": "native_3d",
+          "data": {
+            "root": "root",
+            "camera": "camera",
+            "lights": [],
+            "transparent_sort": "authored_order",
+            "effects": []
+          }
+        }
+      ],
+      "timelines": ["motion"],
+      "clips": [],
+      "audio": [],
+      "recording": null,
+      "output_profile": "linear-premultiplied-srgb-output"
+    }
+  },
+  "objects": {
+    "root": {
+      "name": "Scene root",
+      "local": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      },
+      "body": { "kind": "group", "data": { "children": ["cards", "camera"] } }
+    },
+    "cards": {
+      "name": "Planar cards",
+      "local": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      },
+      "body": {
+        "kind": "draw",
+        "data": { "batch": { "graph": "cards", "output": "batch" } }
+      }
+    },
+    "camera": {
+      "name": "Perspective camera",
+      "local": {
+        "translation": [0, 0, 8],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      },
+      "body": {
+        "kind": "camera",
+        "data": {
+          "operation": "mogf.camera.perspective",
+          "version": 1,
+          "inputs": {},
+          "params": { "fov_y": 0.7853981633974483, "near": 0.1, "far": 100 }
+        }
+      }
+    }
+  },
+  "graphs": {
+    "cards": {
+      "nodes": {
+        "plane": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": { "size": [2, 1.25] }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": { "kind": "node", "data": { "node": "plane", "port": "geometry" } }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "left",
+                  "placement": { "translation": [-1.4, 0, 0], "rotation": [0, 0, 0, 1], "scale": [1, 1, 1] },
+                  "material": "blue"
+                },
+                {
+                  "id": "right",
+                  "placement": { "translation": [1.4, 0, -0.5], "rotation": [0, 0.12, 0, 0.9927738917], "scale": [1, 1, 1] },
+                  "material": "orange"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": { "batch": { "node": "copies", "port": "batch" } }
+    }
+  },
+  "functions": {},
+  "materials": {
+    "blue": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": { "color": [0.08, 0.28, 0.9, 1] }
+    },
+    "orange": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": { "color": [1, 0.32, 0.08, 1] }
+    }
+  },
+  "shaders": {},
+  "timelines": {
+    "motion": {
+      "tracks": [
+        {
+          "target": { "table": "objects", "record": "cards", "slot": "transform.translation.y", "instances": null },
+          "clock": { "kind": "composition", "data": "main" },
+          "at": { "n": "0", "d": "1" },
+          "duration": { "n": "2", "d": "1" },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": { "from": -0.5, "to": 0.5, "ease": "cubic_out" }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "0"
+        }
+      ]
+    }
+  },
+  "clips": {},
+  "media": {},
+  "effects": {},
+  "recordings": {},
+  "bakes": {},
+  "metadata": {}
+}

@@ -1,0 +1,489 @@
+{
+  "format": "mogf.project",
+  "version": 1,
+  "project_id": "principled-plastic-example",
+  "requirements": [],
+  "assets": {
+    "plastic_surface": {
+      "uri": "shaders/principled_tint.wgsl",
+      "kind": "shader",
+      "digest": null
+    },
+    "mobile_lambert_surface": {
+      "uri": "shaders/mobile_lambert.wgsl",
+      "kind": "shader",
+      "digest": null
+    },
+    "liquid_glass_surface": {
+      "uri": "shaders/liquid_glass_surface.wgsl",
+      "kind": "shader",
+      "digest": null
+    }
+  },
+  "states": {},
+  "compositions": {
+    "main": {
+      "size": [
+        1280,
+        720
+      ],
+      "fps": {
+        "n": "30",
+        "d": "1"
+      },
+      "duration": {
+        "n": "4",
+        "d": "1"
+      },
+      "layers": [
+        {
+          "kind": "native_3d",
+          "data": {
+            "root": "root",
+            "camera": "camera",
+            "lights": [
+              "key",
+              "spot"
+            ],
+            "transparent_sort": "authored_order",
+            "effects": []
+          }
+        }
+      ],
+      "timelines": [
+        "motion"
+      ],
+      "clips": [],
+      "audio": [],
+      "recording": null,
+      "output_profile": "linear-premultiplied-srgb-output"
+    }
+  },
+  "objects": {
+    "root": {
+      "name": "Scene root",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [0, 0, 0, 1],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "cards",
+            "camera",
+            "key",
+            "spot"
+          ]
+        }
+      }
+    },
+    "cards": {
+      "name": "Planar cards",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [0, 0, 0, 1],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "cards",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "camera": {
+      "name": "Perspective camera",
+      "local": {
+        "translation": [
+          0,
+          0,
+          8
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "camera",
+        "data": {
+          "operation": "mogf.camera.perspective",
+          "version": 1,
+          "inputs": {},
+          "params": {
+            "fov_y": 0.7853981633974483,
+            "near": 0.1,
+            "far": 100
+          }
+        }
+      }
+    },
+    "key": {
+      "name": "Key light",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [0.2588190451, 0, 0, 0.9659258263],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "light",
+        "data": {
+          "operation": "mogf.light.directional",
+          "version": 1,
+          "inputs": {},
+          "params": {
+            "color": [
+              1,
+              1,
+              1
+            ],
+            "intensity": 3,
+            "casts_shadow": false,
+            "shadow_bias": 0.0012,
+            "shadow_filter_radius": 1.25
+          }
+        }
+      }
+    },
+    "spot": {
+      "name": "Cool spot fill",
+      "local": {
+        "translation": [
+          -2,
+          1.5,
+          5
+        ],
+        "rotation": [0, 0, 0, 1],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "light",
+        "data": {
+          "operation": "mogf.light.spot",
+          "version": 1,
+          "inputs": {},
+          "params": {
+            "color": [
+              0.45,
+              0.7,
+              1
+            ],
+            "intensity": 2,
+            "range": 12,
+            "inner_angle": 0.25,
+            "outer_angle": 0.48,
+            "casts_shadow": true,
+            "shadow_bias": 0.0012,
+            "shadow_filter_radius": 1.25,
+            "shadow_resolution": 256
+          }
+        }
+      }
+    }
+  },
+  "graphs": {
+    "cards": {
+      "nodes": {
+        "plane": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                2,
+                1.25
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "plane",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "left",
+                  "placement": {
+                    "translation": [0, 0, 0],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [3, 2, 1]
+                  },
+                  "material": "blue"
+                },
+                {
+                  "id": "right",
+                  "placement": {
+                    "translation": [0, 0, 0.8],
+                    "rotation": [
+                      0,
+                      0.12,
+                      0,
+                      0.9927738917
+                    ],
+                    "scale": [0.5, 0.5, 1]
+                  },
+                  "material": "orange"
+                },
+                {
+                  "id": "glass",
+                  "placement": {
+                    "translation": [-0.8, -0.1, 0.35],
+                    "rotation": [0, 0.08, 0, 0.9967948636],
+                    "scale": [1.6, 1.1, 1]
+                  },
+                  "material": "liquid_glass"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    }
+  },
+  "functions": {},
+  "materials": {
+    "blue": {
+      "operation": "mogf.material.principled",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0.08,
+          0.28,
+          0.9,
+          1
+        ],
+        "roughness": 0.32,
+        "reflectance": 0.5,
+        "shader_params": [0.18, 0.18, 0.42, 0.8],
+        "casts_shadow": false,
+        "receives_shadow": true,
+        "shader": "plastic_tint"
+      }
+    },
+    "orange": {
+      "operation": "mogf.material.principled",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          1,
+          0.32,
+          0.08,
+          1
+        ],
+        "roughness": 0.42,
+        "reflectance": 0.5,
+        "casts_shadow": true,
+        "receives_shadow": false,
+        "shader": "mobile_lambert"
+      }
+    },
+    "liquid_glass": {
+      "operation": "mogf.material.principled",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [0.1, 0.64, 0.82, 1],
+        "roughness": 0.22,
+        "reflectance": 0.7,
+        "shader_params": [5.5, 0.16, 0.82, 0.2],
+        "casts_shadow": true,
+        "receives_shadow": true,
+        "shader": "liquid_glass"
+      }
+    }
+  },
+  "shaders": {
+    "plastic_tint": {
+      "asset": "plastic_surface",
+      "stage": "surface"
+    },
+    "mobile_lambert": {
+      "asset": "mobile_lambert_surface",
+      "stage": "surface"
+    },
+    "liquid_glass": {
+      "asset": "liquid_glass_surface",
+      "stage": "surface_scene"
+    }
+  },
+  "timelines": {
+    "motion": {
+      "tracks": [
+        {
+          "target": {
+            "table": "objects",
+            "record": "cards",
+            "slot": "transform.translation.y",
+            "instances": null
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "2",
+            "d": "1"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": -0.5,
+              "to": 0.5,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "0"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "cards",
+            "slot": "material.opacity",
+            "instances": ["right"]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "4",
+            "d": "1"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0.55,
+              "to": 0.55,
+              "ease": "linear"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "1"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "cards",
+            "slot": "material.opacity",
+            "instances": ["glass"]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "4",
+            "d": "1"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0.72,
+              "to": 0.72,
+              "ease": "linear"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "2"
+        }
+      ]
+    }
+  },
+  "clips": {},
+  "media": {},
+  "effects": {},
+  "recordings": {},
+  "bakes": {},
+  "metadata": {}
+}

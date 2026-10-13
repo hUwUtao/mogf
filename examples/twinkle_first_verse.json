@@ -1,0 +1,7033 @@
+{
+  "format": "mogf.project",
+  "version": 1,
+  "project_id": "twinkle-first-verse-engraving-poc",
+  "requirements": [],
+  "assets": {
+    "font.music": {
+      "uri": "assets/fonts/NotoMusic-Regular.ttf",
+      "kind": "font",
+      "digest": null
+    },
+    "font.text": {
+      "uri": "assets/fonts/NotoSerif-Medium.ttf",
+      "kind": "font",
+      "digest": null
+    }
+  },
+  "states": {},
+  "compositions": {
+    "main": {
+      "size": [
+        1280,
+        720
+      ],
+      "fps": {
+        "n": "30",
+        "d": "1"
+      },
+      "duration": {
+        "n": "4",
+        "d": "1"
+      },
+      "layers": [
+        {
+          "kind": "native_3d",
+          "data": {
+            "root": "root",
+            "camera": "camera",
+            "lights": [],
+            "transparent_sort": "authored_order",
+            "effects": []
+          }
+        }
+      ],
+      "timelines": [],
+      "clips": [],
+      "audio": [],
+      "recording": null,
+      "output_profile": "linear-premultiplied-srgb-output"
+    }
+  },
+  "objects": {
+    "system-1-staff": {
+      "name": "System 1 staff",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-1-staff-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-bars": {
+      "name": "System 1 measure bars",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-1-bars-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-ledger": {
+      "name": "System 1 C4 ledger lines",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-1-ledger-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-clef": {
+      "name": "System 1 treble clef",
+      "local": {
+        "translation": [
+          -3.58,
+          2.2800000000000002,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "time-4-upper": {
+      "name": "4/4 time signature upper digit",
+      "local": {
+        "translation": [
+          -3.06,
+          2.59,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-digit4",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "time-4-lower": {
+      "name": "4/4 time signature lower digit",
+      "local": {
+        "translation": [
+          -3.06,
+          2.41,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-digit4",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-1": {
+      "name": "C4 quarter note 1",
+      "local": {
+        "translation": [
+          -2.5,
+          2.23,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-2": {
+      "name": "C4 quarter note 2",
+      "local": {
+        "translation": [
+          -1.85,
+          2.23,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-3": {
+      "name": "G4 quarter note 3",
+      "local": {
+        "translation": [
+          -1.2,
+          2.41,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-4": {
+      "name": "G4 quarter note 4",
+      "local": {
+        "translation": [
+          -0.5499999999999998,
+          2.41,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-5": {
+      "name": "A4 quarter note 5",
+      "local": {
+        "translation": [
+          0.10000000000000009,
+          2.455,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-6": {
+      "name": "A4 quarter note 6",
+      "local": {
+        "translation": [
+          0.75,
+          2.455,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-7": {
+      "name": "G4 half note 7",
+      "local": {
+        "translation": [
+          1.4000000000000004,
+          2.41,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-1": {
+      "name": "Lyric syllable Twin-",
+      "local": {
+        "translation": [
+          -2.74966,
+          2.0300000000000002,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-Twin-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-2": {
+      "name": "Lyric syllable kle",
+      "local": {
+        "translation": [
+          -1.98194,
+          2.0300000000000002,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-kle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-3": {
+      "name": "Lyric syllable twin-",
+      "local": {
+        "translation": [
+          -1.4265299999999999,
+          2.0300000000000002,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-twin-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-4": {
+      "name": "Lyric syllable kle",
+      "local": {
+        "translation": [
+          -0.6819399999999998,
+          2.0300000000000002,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-kle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-5": {
+      "name": "Lyric syllable lit-",
+      "local": {
+        "translation": [
+          -0.019519999999999912,
+          2.0300000000000002,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-lit-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-6": {
+      "name": "Lyric syllable tle",
+      "local": {
+        "translation": [
+          0.6389400000000001,
+          2.0300000000000002,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-tle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-7": {
+      "name": "Lyric syllable star",
+      "local": {
+        "translation": [
+          1.2304400000000004,
+          2.0300000000000002,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-star",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-group": {
+      "name": "Score system 1",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "system-1-staff",
+            "system-1-bars",
+            "system-1-ledger",
+            "system-1-clef",
+            "time-4-upper",
+            "time-4-lower",
+            "system-1-note-1",
+            "system-1-note-2",
+            "system-1-note-3",
+            "system-1-note-4",
+            "system-1-note-5",
+            "system-1-note-6",
+            "system-1-note-7",
+            "system-1-lyric-1",
+            "system-1-lyric-2",
+            "system-1-lyric-3",
+            "system-1-lyric-4",
+            "system-1-lyric-5",
+            "system-1-lyric-6",
+            "system-1-lyric-7"
+          ]
+        }
+      }
+    },
+    "system-2-staff": {
+      "name": "System 2 staff",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-2-staff-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-bars": {
+      "name": "System 2 measure bars",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-2-bars-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-ledger": {
+      "name": "System 2 C4 ledger lines",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-2-ledger-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-clef": {
+      "name": "System 2 treble clef",
+      "local": {
+        "translation": [
+          -3.58,
+          1.28,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-1": {
+      "name": "F4 quarter note 1",
+      "local": {
+        "translation": [
+          -2.5,
+          1.365,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-2": {
+      "name": "F4 quarter note 2",
+      "local": {
+        "translation": [
+          -1.85,
+          1.365,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-3": {
+      "name": "E4 quarter note 3",
+      "local": {
+        "translation": [
+          -1.2,
+          1.32,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-4": {
+      "name": "E4 quarter note 4",
+      "local": {
+        "translation": [
+          -0.5499999999999998,
+          1.32,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-5": {
+      "name": "D4 quarter note 5",
+      "local": {
+        "translation": [
+          0.10000000000000009,
+          1.275,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-6": {
+      "name": "D4 quarter note 6",
+      "local": {
+        "translation": [
+          0.75,
+          1.275,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-7": {
+      "name": "C4 half note 7",
+      "local": {
+        "translation": [
+          1.4000000000000004,
+          1.23,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-1": {
+      "name": "Lyric syllable How",
+      "local": {
+        "translation": [
+          -2.70223,
+          1.03,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-How",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-2": {
+      "name": "Lyric syllable I",
+      "local": {
+        "translation": [
+          -1.8838400000000002,
+          1.03,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-I",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-3": {
+      "name": "Lyric syllable won-",
+      "local": {
+        "translation": [
+          -1.41672,
+          1.03,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-won-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-4": {
+      "name": "Lyric syllable der",
+      "local": {
+        "translation": [
+          -0.6988599999999998,
+          1.03,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-der",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-5": {
+      "name": "Lyric syllable what",
+      "local": {
+        "translation": [
+          -0.1199599999999999,
+          1.03,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-what",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-6": {
+      "name": "Lyric syllable you",
+      "local": {
+        "translation": [
+          0.588,
+          1.03,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-you",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-7": {
+      "name": "Lyric syllable are",
+      "local": {
+        "translation": [
+          1.2557300000000005,
+          1.03,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-are",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-group": {
+      "name": "Score system 2",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "system-2-staff",
+            "system-2-bars",
+            "system-2-ledger",
+            "system-2-clef",
+            "system-2-note-1",
+            "system-2-note-2",
+            "system-2-note-3",
+            "system-2-note-4",
+            "system-2-note-5",
+            "system-2-note-6",
+            "system-2-note-7",
+            "system-2-lyric-1",
+            "system-2-lyric-2",
+            "system-2-lyric-3",
+            "system-2-lyric-4",
+            "system-2-lyric-5",
+            "system-2-lyric-6",
+            "system-2-lyric-7"
+          ]
+        }
+      }
+    },
+    "system-3-staff": {
+      "name": "System 3 staff",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-3-staff-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-bars": {
+      "name": "System 3 measure bars",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-3-bars-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-clef": {
+      "name": "System 3 treble clef",
+      "local": {
+        "translation": [
+          -3.58,
+          0.28,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-1": {
+      "name": "G4 quarter note 1",
+      "local": {
+        "translation": [
+          -2.5,
+          0.41000000000000003,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-2": {
+      "name": "G4 quarter note 2",
+      "local": {
+        "translation": [
+          -1.85,
+          0.41000000000000003,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-3": {
+      "name": "F4 quarter note 3",
+      "local": {
+        "translation": [
+          -1.2,
+          0.365,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-4": {
+      "name": "F4 quarter note 4",
+      "local": {
+        "translation": [
+          -0.5499999999999998,
+          0.365,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-5": {
+      "name": "E4 quarter note 5",
+      "local": {
+        "translation": [
+          0.10000000000000009,
+          0.32,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-6": {
+      "name": "E4 quarter note 6",
+      "local": {
+        "translation": [
+          0.75,
+          0.32,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-7": {
+      "name": "D4 half note 7",
+      "local": {
+        "translation": [
+          1.4000000000000004,
+          0.275,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-1": {
+      "name": "Lyric syllable Up",
+      "local": {
+        "translation": [
+          -2.62132,
+          0.030000000000000027,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-Up",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-2": {
+      "name": "Lyric syllable a-",
+      "local": {
+        "translation": [
+          -1.92947,
+          0.030000000000000027,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-a-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-3": {
+      "name": "Lyric syllable bove",
+      "local": {
+        "translation": [
+          -1.41087,
+          0.030000000000000027,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-bove",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-4": {
+      "name": "Lyric syllable the",
+      "local": {
+        "translation": [
+          -0.6900399999999998,
+          0.030000000000000027,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-the",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-5": {
+      "name": "Lyric syllable world",
+      "local": {
+        "translation": [
+          -0.15901999999999994,
+          0.030000000000000027,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-world",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-6": {
+      "name": "Lyric syllable so",
+      "local": {
+        "translation": [
+          0.65586,
+          0.030000000000000027,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-so",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-7": {
+      "name": "Lyric syllable high",
+      "local": {
+        "translation": [
+          1.2055100000000003,
+          0.030000000000000027,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-high",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-group": {
+      "name": "Score system 3",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "system-3-staff",
+            "system-3-bars",
+            "system-3-clef",
+            "system-3-note-1",
+            "system-3-note-2",
+            "system-3-note-3",
+            "system-3-note-4",
+            "system-3-note-5",
+            "system-3-note-6",
+            "system-3-note-7",
+            "system-3-lyric-1",
+            "system-3-lyric-2",
+            "system-3-lyric-3",
+            "system-3-lyric-4",
+            "system-3-lyric-5",
+            "system-3-lyric-6",
+            "system-3-lyric-7"
+          ]
+        }
+      }
+    },
+    "system-4-staff": {
+      "name": "System 4 staff",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-4-staff-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-bars": {
+      "name": "System 4 measure bars",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-4-bars-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-clef": {
+      "name": "System 4 treble clef",
+      "local": {
+        "translation": [
+          -3.58,
+          -0.72,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-1": {
+      "name": "G4 quarter note 1",
+      "local": {
+        "translation": [
+          -2.5,
+          -0.59,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-2": {
+      "name": "G4 quarter note 2",
+      "local": {
+        "translation": [
+          -1.85,
+          -0.59,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-3": {
+      "name": "F4 quarter note 3",
+      "local": {
+        "translation": [
+          -1.2,
+          -0.635,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-4": {
+      "name": "F4 quarter note 4",
+      "local": {
+        "translation": [
+          -0.5499999999999998,
+          -0.635,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-5": {
+      "name": "E4 quarter note 5",
+      "local": {
+        "translation": [
+          0.10000000000000009,
+          -0.6799999999999999,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-6": {
+      "name": "E4 quarter note 6",
+      "local": {
+        "translation": [
+          0.75,
+          -0.6799999999999999,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-7": {
+      "name": "D4 half note 7",
+      "local": {
+        "translation": [
+          1.4000000000000004,
+          -0.725,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-1": {
+      "name": "Lyric syllable Like",
+      "local": {
+        "translation": [
+          -2.68945,
+          -0.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-Like",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-2": {
+      "name": "Lyric syllable a",
+      "local": {
+        "translation": [
+          -1.90157,
+          -0.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-a",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-3": {
+      "name": "Lyric syllable dia-",
+      "local": {
+        "translation": [
+          -1.36524,
+          -0.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-dia-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-4": {
+      "name": "Lyric syllable mond",
+      "local": {
+        "translation": [
+          -0.8036199999999998,
+          -0.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-mond",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-5": {
+      "name": "Lyric syllable in",
+      "local": {
+        "translation": [
+          0.011800000000000088,
+          -0.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-in",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-6": {
+      "name": "Lyric syllable the",
+      "local": {
+        "translation": [
+          0.6099600000000001,
+          -0.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-the",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-7": {
+      "name": "Lyric syllable sky",
+      "local": {
+        "translation": [
+          1.2535700000000003,
+          -0.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-sky",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-group": {
+      "name": "Score system 4",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "system-4-staff",
+            "system-4-bars",
+            "system-4-clef",
+            "system-4-note-1",
+            "system-4-note-2",
+            "system-4-note-3",
+            "system-4-note-4",
+            "system-4-note-5",
+            "system-4-note-6",
+            "system-4-note-7",
+            "system-4-lyric-1",
+            "system-4-lyric-2",
+            "system-4-lyric-3",
+            "system-4-lyric-4",
+            "system-4-lyric-5",
+            "system-4-lyric-6",
+            "system-4-lyric-7"
+          ]
+        }
+      }
+    },
+    "system-5-staff": {
+      "name": "System 5 staff",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-5-staff-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-bars": {
+      "name": "System 5 measure bars",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-5-bars-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-ledger": {
+      "name": "System 5 C4 ledger lines",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-5-ledger-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-clef": {
+      "name": "System 5 treble clef",
+      "local": {
+        "translation": [
+          -3.58,
+          -1.72,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-1": {
+      "name": "C4 quarter note 1",
+      "local": {
+        "translation": [
+          -2.5,
+          -1.77,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-2": {
+      "name": "C4 quarter note 2",
+      "local": {
+        "translation": [
+          -1.85,
+          -1.77,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-3": {
+      "name": "G4 quarter note 3",
+      "local": {
+        "translation": [
+          -1.2,
+          -1.59,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-4": {
+      "name": "G4 quarter note 4",
+      "local": {
+        "translation": [
+          -0.5499999999999998,
+          -1.59,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-5": {
+      "name": "A4 quarter note 5",
+      "local": {
+        "translation": [
+          0.10000000000000009,
+          -1.545,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-6": {
+      "name": "A4 quarter note 6",
+      "local": {
+        "translation": [
+          0.75,
+          -1.545,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-7": {
+      "name": "G4 half note 7",
+      "local": {
+        "translation": [
+          1.4000000000000004,
+          -1.59,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-1": {
+      "name": "Lyric syllable Twin-",
+      "local": {
+        "translation": [
+          -2.74966,
+          -1.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-Twin-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-2": {
+      "name": "Lyric syllable kle",
+      "local": {
+        "translation": [
+          -1.98194,
+          -1.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-kle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-3": {
+      "name": "Lyric syllable twin-",
+      "local": {
+        "translation": [
+          -1.4265299999999999,
+          -1.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-twin-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-4": {
+      "name": "Lyric syllable kle",
+      "local": {
+        "translation": [
+          -0.6819399999999998,
+          -1.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-kle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-5": {
+      "name": "Lyric syllable lit-",
+      "local": {
+        "translation": [
+          -0.019519999999999912,
+          -1.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-lit-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-6": {
+      "name": "Lyric syllable tle",
+      "local": {
+        "translation": [
+          0.6389400000000001,
+          -1.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-tle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-7": {
+      "name": "Lyric syllable star",
+      "local": {
+        "translation": [
+          1.2304400000000004,
+          -1.97,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-star",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-group": {
+      "name": "Score system 5",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "system-5-staff",
+            "system-5-bars",
+            "system-5-ledger",
+            "system-5-clef",
+            "system-5-note-1",
+            "system-5-note-2",
+            "system-5-note-3",
+            "system-5-note-4",
+            "system-5-note-5",
+            "system-5-note-6",
+            "system-5-note-7",
+            "system-5-lyric-1",
+            "system-5-lyric-2",
+            "system-5-lyric-3",
+            "system-5-lyric-4",
+            "system-5-lyric-5",
+            "system-5-lyric-6",
+            "system-5-lyric-7"
+          ]
+        }
+      }
+    },
+    "system-6-staff": {
+      "name": "System 6 staff",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-6-staff-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-bars": {
+      "name": "System 6 measure bars",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-6-bars-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-ledger": {
+      "name": "System 6 C4 ledger lines",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "system-6-ledger-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-clef": {
+      "name": "System 6 treble clef",
+      "local": {
+        "translation": [
+          -3.58,
+          -2.7199999999999998,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-1": {
+      "name": "F4 quarter note 1",
+      "local": {
+        "translation": [
+          -2.5,
+          -2.635,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-2": {
+      "name": "F4 quarter note 2",
+      "local": {
+        "translation": [
+          -1.85,
+          -2.635,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-3": {
+      "name": "E4 quarter note 3",
+      "local": {
+        "translation": [
+          -1.2,
+          -2.68,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-4": {
+      "name": "E4 quarter note 4",
+      "local": {
+        "translation": [
+          -0.5499999999999998,
+          -2.68,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-5": {
+      "name": "D4 quarter note 5",
+      "local": {
+        "translation": [
+          0.10000000000000009,
+          -2.725,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-6": {
+      "name": "D4 quarter note 6",
+      "local": {
+        "translation": [
+          0.75,
+          -2.725,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-7": {
+      "name": "C4 half note 7",
+      "local": {
+        "translation": [
+          1.4000000000000004,
+          -2.77,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-1": {
+      "name": "Lyric syllable How",
+      "local": {
+        "translation": [
+          -2.70223,
+          -2.9699999999999998,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-How",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-2": {
+      "name": "Lyric syllable I",
+      "local": {
+        "translation": [
+          -1.8838400000000002,
+          -2.9699999999999998,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-I",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-3": {
+      "name": "Lyric syllable won-",
+      "local": {
+        "translation": [
+          -1.41672,
+          -2.9699999999999998,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-won-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-4": {
+      "name": "Lyric syllable der",
+      "local": {
+        "translation": [
+          -0.6988599999999998,
+          -2.9699999999999998,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-der",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-5": {
+      "name": "Lyric syllable what",
+      "local": {
+        "translation": [
+          -0.1199599999999999,
+          -2.9699999999999998,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-what",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-6": {
+      "name": "Lyric syllable you",
+      "local": {
+        "translation": [
+          0.588,
+          -2.9699999999999998,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-you",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-7": {
+      "name": "Lyric syllable are",
+      "local": {
+        "translation": [
+          1.2557300000000005,
+          -2.9699999999999998,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-are",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-group": {
+      "name": "Score system 6",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "system-6-staff",
+            "system-6-bars",
+            "system-6-ledger",
+            "system-6-clef",
+            "system-6-note-1",
+            "system-6-note-2",
+            "system-6-note-3",
+            "system-6-note-4",
+            "system-6-note-5",
+            "system-6-note-6",
+            "system-6-note-7",
+            "system-6-lyric-1",
+            "system-6-lyric-2",
+            "system-6-lyric-3",
+            "system-6-lyric-4",
+            "system-6-lyric-5",
+            "system-6-lyric-6",
+            "system-6-lyric-7"
+          ]
+        }
+      }
+    },
+    "title": {
+      "name": "Score title",
+      "local": {
+        "translation": [
+          -1.8501750000000001,
+          3.03,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-title",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "camera": {
+      "name": "Score camera",
+      "local": {
+        "translation": [
+          0,
+          0,
+          8
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "camera",
+        "data": {
+          "operation": "mogf.camera.perspective",
+          "version": 1,
+          "inputs": {},
+          "params": {
+            "fov_y": 0.7853981633974483,
+            "near": 0.1,
+            "far": 100
+          }
+        }
+      }
+    },
+    "root": {
+      "name": "Twinkle score",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "paper-background",
+            "title",
+            "system-1-group",
+            "system-2-group",
+            "system-3-group",
+            "system-4-group",
+            "system-5-group",
+            "system-6-group",
+            "camera"
+          ]
+        }
+      }
+    },
+    "paper-background": {
+      "name": "White paper background plane",
+      "local": {
+        "translation": [
+          0,
+          0,
+          -1
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-paper-background",
+            "output": "batch"
+          }
+        }
+      }
+    }
+  },
+  "graphs": {
+    "g-quarter": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.music"
+                }
+              }
+            },
+            "params": {
+              "text": "\ud834\udd5f",
+              "size": 0.31,
+              "token_ids": [
+                "g-quarter-c00"
+              ],
+              "material": "note-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "g-half": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.music"
+                }
+              }
+            },
+            "params": {
+              "text": "\ud834\udd5e",
+              "size": 0.31,
+              "token_ids": [
+                "g-half-c00"
+              ],
+              "material": "note-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "g-clef": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.music"
+                }
+              }
+            },
+            "params": {
+              "text": "\ud834\udd1e",
+              "size": 0.36,
+              "token_ids": [
+                "g-clef-c00"
+              ],
+              "material": "note-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "g-digit4": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "4",
+              "size": 0.14,
+              "token_ids": [
+                "g-digit4-c00"
+              ],
+              "material": "note-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "g-title": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "Twinkle, Twinkle, Little Star",
+              "size": 0.27,
+              "token_ids": [
+                "g-title-c00",
+                "g-title-c01",
+                "g-title-c02",
+                "g-title-c03",
+                "g-title-c04",
+                "g-title-c05",
+                "g-title-c06",
+                "g-title-c07",
+                "g-title-c08",
+                "g-title-c09",
+                "g-title-c10",
+                "g-title-c11",
+                "g-title-c12",
+                "g-title-c13",
+                "g-title-c14",
+                "g-title-c15",
+                "g-title-c16",
+                "g-title-c17",
+                "g-title-c18",
+                "g-title-c19",
+                "g-title-c20",
+                "g-title-c21",
+                "g-title-c22",
+                "g-title-c23",
+                "g-title-c24",
+                "g-title-c25",
+                "g-title-c26",
+                "g-title-c27",
+                "g-title-c28"
+              ],
+              "material": "title-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "system-1-staff-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                8,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-1-staff-0",
+                  "placement": {
+                    "translation": [
+                      0,
+                      2.32,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-1-staff-1",
+                  "placement": {
+                    "translation": [
+                      0,
+                      2.41,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-1-staff-2",
+                  "placement": {
+                    "translation": [
+                      0,
+                      2.5,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-1-staff-3",
+                  "placement": {
+                    "translation": [
+                      0,
+                      2.59,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-1-staff-4",
+                  "placement": {
+                    "translation": [
+                      0,
+                      2.68,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-1-bars-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.022,
+                0.38
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-1-bar-0",
+                  "placement": {
+                    "translation": [
+                      -2.66,
+                      2.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-1-bar-1",
+                  "placement": {
+                    "translation": [
+                      -0.06000000000000005,
+                      2.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-1-bar-2",
+                  "placement": {
+                    "translation": [
+                      2.54,
+                      2.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-1-ledger-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.19,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-1-ledger-0",
+                  "placement": {
+                    "translation": [
+                      -2.5,
+                      2.23,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-1-ledger-1",
+                  "placement": {
+                    "translation": [
+                      -1.85,
+                      2.23,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-Twin-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "Twin-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-Twin-hyphen-c00",
+                "lyric-Twin-hyphen-c01",
+                "lyric-Twin-hyphen-c02",
+                "lyric-Twin-hyphen-c03",
+                "lyric-Twin-hyphen-c04"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-kle": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "kle",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-kle-c00",
+                "lyric-kle-c01",
+                "lyric-kle-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-twin-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "twin-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-twin-hyphen-c00",
+                "lyric-twin-hyphen-c01",
+                "lyric-twin-hyphen-c02",
+                "lyric-twin-hyphen-c03",
+                "lyric-twin-hyphen-c04"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-lit-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "lit-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-lit-hyphen-c00",
+                "lyric-lit-hyphen-c01",
+                "lyric-lit-hyphen-c02",
+                "lyric-lit-hyphen-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-tle": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "tle",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-tle-c00",
+                "lyric-tle-c01",
+                "lyric-tle-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-star": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "star",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-star-c00",
+                "lyric-star-c01",
+                "lyric-star-c02",
+                "lyric-star-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "system-2-staff-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                8,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-2-staff-0",
+                  "placement": {
+                    "translation": [
+                      0,
+                      1.32,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-2-staff-1",
+                  "placement": {
+                    "translation": [
+                      0,
+                      1.41,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-2-staff-2",
+                  "placement": {
+                    "translation": [
+                      0,
+                      1.5,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-2-staff-3",
+                  "placement": {
+                    "translation": [
+                      0,
+                      1.59,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-2-staff-4",
+                  "placement": {
+                    "translation": [
+                      0,
+                      1.68,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-2-bars-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.022,
+                0.38
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-2-bar-0",
+                  "placement": {
+                    "translation": [
+                      -2.66,
+                      1.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-2-bar-1",
+                  "placement": {
+                    "translation": [
+                      -0.06000000000000005,
+                      1.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-2-bar-2",
+                  "placement": {
+                    "translation": [
+                      2.54,
+                      1.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-2-ledger-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.19,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-2-ledger-6",
+                  "placement": {
+                    "translation": [
+                      1.4000000000000004,
+                      1.23,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-How": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "How",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-How-c00",
+                "lyric-How-c01",
+                "lyric-How-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-I": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "I",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-I-c00"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-won-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "won-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-won-hyphen-c00",
+                "lyric-won-hyphen-c01",
+                "lyric-won-hyphen-c02",
+                "lyric-won-hyphen-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-der": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "der",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-der-c00",
+                "lyric-der-c01",
+                "lyric-der-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-what": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "what",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-what-c00",
+                "lyric-what-c01",
+                "lyric-what-c02",
+                "lyric-what-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-you": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "you",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-you-c00",
+                "lyric-you-c01",
+                "lyric-you-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-are": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "are",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-are-c00",
+                "lyric-are-c01",
+                "lyric-are-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "system-3-staff-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                8,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-3-staff-0",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0.32,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-3-staff-1",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0.41000000000000003,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-3-staff-2",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0.5,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-3-staff-3",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0.59,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-3-staff-4",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0.6799999999999999,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-3-bars-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.022,
+                0.38
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-3-bar-0",
+                  "placement": {
+                    "translation": [
+                      -2.66,
+                      0.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-3-bar-1",
+                  "placement": {
+                    "translation": [
+                      -0.06000000000000005,
+                      0.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-3-bar-2",
+                  "placement": {
+                    "translation": [
+                      2.54,
+                      0.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-Up": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "Up",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-Up-c00",
+                "lyric-Up-c01"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-a-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "a-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-a-hyphen-c00",
+                "lyric-a-hyphen-c01"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-bove": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "bove",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-bove-c00",
+                "lyric-bove-c01",
+                "lyric-bove-c02",
+                "lyric-bove-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-the": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "the",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-the-c00",
+                "lyric-the-c01",
+                "lyric-the-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-world": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "world",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-world-c00",
+                "lyric-world-c01",
+                "lyric-world-c02",
+                "lyric-world-c03",
+                "lyric-world-c04"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-so": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "so",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-so-c00",
+                "lyric-so-c01"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-high": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "high",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-high-c00",
+                "lyric-high-c01",
+                "lyric-high-c02",
+                "lyric-high-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "system-4-staff-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                8,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-4-staff-0",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -0.6799999999999999,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-4-staff-1",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -0.59,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-4-staff-2",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -0.5,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-4-staff-3",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -0.41000000000000003,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-4-staff-4",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -0.32,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-4-bars-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.022,
+                0.38
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-4-bar-0",
+                  "placement": {
+                    "translation": [
+                      -2.66,
+                      -0.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-4-bar-1",
+                  "placement": {
+                    "translation": [
+                      -0.06000000000000005,
+                      -0.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-4-bar-2",
+                  "placement": {
+                    "translation": [
+                      2.54,
+                      -0.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-Like": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "Like",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-Like-c00",
+                "lyric-Like-c01",
+                "lyric-Like-c02",
+                "lyric-Like-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-a": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "a",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-a-c00"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-dia-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "dia-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-dia-hyphen-c00",
+                "lyric-dia-hyphen-c01",
+                "lyric-dia-hyphen-c02",
+                "lyric-dia-hyphen-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-mond": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "mond",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-mond-c00",
+                "lyric-mond-c01",
+                "lyric-mond-c02",
+                "lyric-mond-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-in": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "in",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-in-c00",
+                "lyric-in-c01"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-sky": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "sky",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-sky-c00",
+                "lyric-sky-c01",
+                "lyric-sky-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "system-5-staff-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                8,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-5-staff-0",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -1.68,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-5-staff-1",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -1.59,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-5-staff-2",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -1.5,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-5-staff-3",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -1.41,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-5-staff-4",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -1.32,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-5-bars-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.022,
+                0.38
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-5-bar-0",
+                  "placement": {
+                    "translation": [
+                      -2.66,
+                      -1.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-5-bar-1",
+                  "placement": {
+                    "translation": [
+                      -0.06000000000000005,
+                      -1.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-5-bar-2",
+                  "placement": {
+                    "translation": [
+                      2.54,
+                      -1.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-5-ledger-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.19,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-5-ledger-0",
+                  "placement": {
+                    "translation": [
+                      -2.5,
+                      -1.77,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-5-ledger-1",
+                  "placement": {
+                    "translation": [
+                      -1.85,
+                      -1.77,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-6-staff-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                8,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-6-staff-0",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -2.68,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-6-staff-1",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -2.59,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-6-staff-2",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -2.5,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-6-staff-3",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -2.41,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-6-staff-4",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -2.32,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-6-bars-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.022,
+                0.38
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-6-bar-0",
+                  "placement": {
+                    "translation": [
+                      -2.66,
+                      -2.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-6-bar-1",
+                  "placement": {
+                    "translation": [
+                      -0.06000000000000005,
+                      -2.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "system-6-bar-2",
+                  "placement": {
+                    "translation": [
+                      2.54,
+                      -2.5,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "system-6-ledger-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.19,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "system-6-ledger-6",
+                  "placement": {
+                    "translation": [
+                      1.4000000000000004,
+                      -2.77,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "g-paper-background": {
+      "nodes": {
+        "plane": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                16,
+                10
+              ]
+            }
+          }
+        },
+        "paper": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "plane",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "paper-sheet",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "paper-white"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "paper",
+          "port": "batch"
+        }
+      }
+    }
+  },
+  "functions": {},
+  "materials": {
+    "staff-ink": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "note-ink": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "lyric-ink": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "title-ink": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "paper-white": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  },
+  "shaders": {},
+  "timelines": {},
+  "clips": {},
+  "media": {},
+  "effects": {},
+  "recordings": {},
+  "bakes": {},
+  "metadata": {}
+}

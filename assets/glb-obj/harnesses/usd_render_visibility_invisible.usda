@@ -1,0 +1,21 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World" (
+    prepend apiSchemas = ["VisibilityAPI"]
+)
+{
+    uniform token purpose = "render"
+    uniform token renderVisibility = "invisible"
+    def Mesh "HiddenTriangle"
+    {
+        point3f[] points = [(0, 0, 0), (1, 0, 0), (0, 1, 0)]
+        int[] faceVertexCounts = [3]
+        int[] faceVertexIndices = [0, 1, 2]
+        uniform token subdivisionScheme = "none"
+    }
+}

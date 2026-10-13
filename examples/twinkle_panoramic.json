@@ -1,0 +1,5251 @@
+{
+  "format": "mogf.project",
+  "version": 1,
+  "project_id": "twinkle-single-line-panorama",
+  "requirements": [],
+  "assets": {
+    "font.music": {
+      "uri": "assets/fonts/NotoMusic-Regular.ttf",
+      "kind": "font",
+      "digest": null
+    },
+    "font.text": {
+      "uri": "assets/fonts/NotoSerif-Medium.ttf",
+      "kind": "font",
+      "digest": null
+    }
+  },
+  "states": {},
+  "compositions": {
+    "main": {
+      "size": [
+        1920,
+        1080
+      ],
+      "fps": {
+        "n": "30",
+        "d": "1"
+      },
+      "duration": {
+        "n": "8",
+        "d": "1"
+      },
+      "layers": [
+        {
+          "kind": "native_3d",
+          "data": {
+            "root": "scene-root",
+            "camera": "camera",
+            "lights": [],
+            "transparent_sort": "authored_order",
+            "effects": []
+          }
+        }
+      ],
+      "timelines": [
+        "motion"
+      ],
+      "clips": [],
+      "audio": [],
+      "recording": null,
+      "output_profile": "linear-premultiplied-srgb-output"
+    }
+  },
+  "objects": {
+    "system-1-clef": {
+      "name": "System 1 treble clef",
+      "local": {
+        "translation": [
+          -18.27,
+          -0.21999999999999975,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-1": {
+      "name": "C4 quarter note 1",
+      "local": {
+        "translation": [
+          -17.189999999999998,
+          -0.27,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-2": {
+      "name": "C4 quarter note 2",
+      "local": {
+        "translation": [
+          -16.54,
+          -0.27,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-3": {
+      "name": "G4 quarter note 3",
+      "local": {
+        "translation": [
+          -15.889999999999999,
+          -0.08999999999999986,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-4": {
+      "name": "G4 quarter note 4",
+      "local": {
+        "translation": [
+          -15.239999999999998,
+          -0.08999999999999986,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-5": {
+      "name": "A4 quarter note 5",
+      "local": {
+        "translation": [
+          -14.59,
+          -0.04499999999999993,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-6": {
+      "name": "A4 quarter note 6",
+      "local": {
+        "translation": [
+          -13.94,
+          -0.04499999999999993,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-note-7": {
+      "name": "G4 half note 7",
+      "local": {
+        "translation": [
+          -13.29,
+          -0.08999999999999986,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-1": {
+      "name": "Lyric syllable Twin-",
+      "local": {
+        "translation": [
+          -17.43966,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-Twin-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-2": {
+      "name": "Lyric syllable kle",
+      "local": {
+        "translation": [
+          -16.67194,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-kle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-3": {
+      "name": "Lyric syllable twin-",
+      "local": {
+        "translation": [
+          -16.11653,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-twin-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-4": {
+      "name": "Lyric syllable kle",
+      "local": {
+        "translation": [
+          -15.371939999999999,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-kle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-5": {
+      "name": "Lyric syllable lit-",
+      "local": {
+        "translation": [
+          -14.70952,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-lit-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-6": {
+      "name": "Lyric syllable tle",
+      "local": {
+        "translation": [
+          -14.05106,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-tle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-1-lyric-7": {
+      "name": "Lyric syllable star",
+      "local": {
+        "translation": [
+          -13.45956,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-star",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-clef": {
+      "name": "System 2 treble clef",
+      "local": {
+        "translation": [
+          -5.836,
+          1.28,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-1": {
+      "name": "F4 quarter note 1",
+      "local": {
+        "translation": [
+          -11.29,
+          -0.135,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-2": {
+      "name": "F4 quarter note 2",
+      "local": {
+        "translation": [
+          -10.639999999999999,
+          -0.135,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-3": {
+      "name": "E4 quarter note 3",
+      "local": {
+        "translation": [
+          -9.989999999999998,
+          -0.17999999999999994,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-4": {
+      "name": "E4 quarter note 4",
+      "local": {
+        "translation": [
+          -9.34,
+          -0.17999999999999994,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-5": {
+      "name": "D4 quarter note 5",
+      "local": {
+        "translation": [
+          -8.69,
+          -0.2250000000000001,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-6": {
+      "name": "D4 quarter note 6",
+      "local": {
+        "translation": [
+          -8.04,
+          -0.2250000000000001,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-note-7": {
+      "name": "C4 half note 7",
+      "local": {
+        "translation": [
+          -7.389999999999999,
+          -0.27,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-1": {
+      "name": "Lyric syllable How",
+      "local": {
+        "translation": [
+          -11.49223,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-How",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-2": {
+      "name": "Lyric syllable I",
+      "local": {
+        "translation": [
+          -10.673839999999998,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-I",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-3": {
+      "name": "Lyric syllable won-",
+      "local": {
+        "translation": [
+          -10.206719999999999,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-won-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-4": {
+      "name": "Lyric syllable der",
+      "local": {
+        "translation": [
+          -9.488859999999999,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-der",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-5": {
+      "name": "Lyric syllable what",
+      "local": {
+        "translation": [
+          -8.90996,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-what",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-6": {
+      "name": "Lyric syllable you",
+      "local": {
+        "translation": [
+          -8.201999999999998,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-you",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-2-lyric-7": {
+      "name": "Lyric syllable are",
+      "local": {
+        "translation": [
+          -7.5342699999999985,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-are",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-clef": {
+      "name": "System 3 treble clef",
+      "local": {
+        "translation": [
+          -5.836,
+          0.28,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-1": {
+      "name": "G4 quarter note 1",
+      "local": {
+        "translation": [
+          -5.389999999999999,
+          -0.08999999999999997,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-2": {
+      "name": "G4 quarter note 2",
+      "local": {
+        "translation": [
+          -4.739999999999998,
+          -0.08999999999999997,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-3": {
+      "name": "F4 quarter note 3",
+      "local": {
+        "translation": [
+          -4.089999999999999,
+          -0.135,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-4": {
+      "name": "F4 quarter note 4",
+      "local": {
+        "translation": [
+          -3.4399999999999986,
+          -0.135,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-5": {
+      "name": "E4 quarter note 5",
+      "local": {
+        "translation": [
+          -2.7899999999999987,
+          -0.18,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-6": {
+      "name": "E4 quarter note 6",
+      "local": {
+        "translation": [
+          -2.139999999999999,
+          -0.18,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-note-7": {
+      "name": "D4 half note 7",
+      "local": {
+        "translation": [
+          -1.4899999999999987,
+          -0.22499999999999998,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-1": {
+      "name": "Lyric syllable Up",
+      "local": {
+        "translation": [
+          -5.511319999999999,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-Up",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-2": {
+      "name": "Lyric syllable a-",
+      "local": {
+        "translation": [
+          -4.819469999999999,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-a-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-3": {
+      "name": "Lyric syllable bove",
+      "local": {
+        "translation": [
+          -4.300869999999999,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-bove",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-4": {
+      "name": "Lyric syllable the",
+      "local": {
+        "translation": [
+          -3.5800399999999986,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-the",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-5": {
+      "name": "Lyric syllable world",
+      "local": {
+        "translation": [
+          -3.0490199999999987,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-world",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-6": {
+      "name": "Lyric syllable so",
+      "local": {
+        "translation": [
+          -2.2341399999999987,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-so",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-3-lyric-7": {
+      "name": "Lyric syllable high",
+      "local": {
+        "translation": [
+          -1.6844899999999985,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-high",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-clef": {
+      "name": "System 4 treble clef",
+      "local": {
+        "translation": [
+          -5.836,
+          -0.72,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-1": {
+      "name": "G4 quarter note 1",
+      "local": {
+        "translation": [
+          0.5100000000000033,
+          -0.08999999999999997,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-2": {
+      "name": "G4 quarter note 2",
+      "local": {
+        "translation": [
+          1.1600000000000033,
+          -0.08999999999999997,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-3": {
+      "name": "F4 quarter note 3",
+      "local": {
+        "translation": [
+          1.8100000000000034,
+          -0.135,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-4": {
+      "name": "F4 quarter note 4",
+      "local": {
+        "translation": [
+          2.4600000000000035,
+          -0.135,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-5": {
+      "name": "E4 quarter note 5",
+      "local": {
+        "translation": [
+          3.1100000000000034,
+          -0.17999999999999994,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-6": {
+      "name": "E4 quarter note 6",
+      "local": {
+        "translation": [
+          3.7600000000000033,
+          -0.17999999999999994,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-note-7": {
+      "name": "D4 half note 7",
+      "local": {
+        "translation": [
+          4.410000000000004,
+          -0.22499999999999998,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-1": {
+      "name": "Lyric syllable Like",
+      "local": {
+        "translation": [
+          0.32055000000000344,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-Like",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-2": {
+      "name": "Lyric syllable a",
+      "local": {
+        "translation": [
+          1.1084300000000034,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-a",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-3": {
+      "name": "Lyric syllable dia-",
+      "local": {
+        "translation": [
+          1.6447600000000036,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-dia-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-4": {
+      "name": "Lyric syllable mond",
+      "local": {
+        "translation": [
+          2.206380000000004,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-mond",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-5": {
+      "name": "Lyric syllable in",
+      "local": {
+        "translation": [
+          3.0218000000000034,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-in",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-6": {
+      "name": "Lyric syllable the",
+      "local": {
+        "translation": [
+          3.6199600000000034,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-the",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-4-lyric-7": {
+      "name": "Lyric syllable sky",
+      "local": {
+        "translation": [
+          4.263570000000003,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-sky",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-clef": {
+      "name": "System 5 treble clef",
+      "local": {
+        "translation": [
+          -5.836,
+          -1.72,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-1": {
+      "name": "C4 quarter note 1",
+      "local": {
+        "translation": [
+          6.410000000000002,
+          -0.27,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-2": {
+      "name": "C4 quarter note 2",
+      "local": {
+        "translation": [
+          7.060000000000002,
+          -0.27,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-3": {
+      "name": "G4 quarter note 3",
+      "local": {
+        "translation": [
+          7.710000000000002,
+          -0.09000000000000008,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-4": {
+      "name": "G4 quarter note 4",
+      "local": {
+        "translation": [
+          8.360000000000003,
+          -0.09000000000000008,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-5": {
+      "name": "A4 quarter note 5",
+      "local": {
+        "translation": [
+          9.010000000000002,
+          -0.04499999999999993,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-6": {
+      "name": "A4 quarter note 6",
+      "local": {
+        "translation": [
+          9.660000000000002,
+          -0.04499999999999993,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-note-7": {
+      "name": "G4 half note 7",
+      "local": {
+        "translation": [
+          10.310000000000002,
+          -0.09000000000000008,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-1": {
+      "name": "Lyric syllable Twin-",
+      "local": {
+        "translation": [
+          6.1603400000000015,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-Twin-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-2": {
+      "name": "Lyric syllable kle",
+      "local": {
+        "translation": [
+          6.928060000000002,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-kle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-3": {
+      "name": "Lyric syllable twin-",
+      "local": {
+        "translation": [
+          7.483470000000002,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-twin-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-4": {
+      "name": "Lyric syllable kle",
+      "local": {
+        "translation": [
+          8.228060000000003,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-kle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-5": {
+      "name": "Lyric syllable lit-",
+      "local": {
+        "translation": [
+          8.890480000000002,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-lit-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-6": {
+      "name": "Lyric syllable tle",
+      "local": {
+        "translation": [
+          9.548940000000002,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-tle",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-5-lyric-7": {
+      "name": "Lyric syllable star",
+      "local": {
+        "translation": [
+          10.140440000000002,
+          -0.47,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-star",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-clef": {
+      "name": "System 6 treble clef",
+      "local": {
+        "translation": [
+          -5.836,
+          -2.7199999999999998,
+          0.03
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-clef",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-1": {
+      "name": "F4 quarter note 1",
+      "local": {
+        "translation": [
+          12.31,
+          -0.1349999999999998,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-2": {
+      "name": "F4 quarter note 2",
+      "local": {
+        "translation": [
+          12.96,
+          -0.1349999999999998,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-3": {
+      "name": "E4 quarter note 3",
+      "local": {
+        "translation": [
+          13.610000000000001,
+          -0.18000000000000016,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-4": {
+      "name": "E4 quarter note 4",
+      "local": {
+        "translation": [
+          14.260000000000002,
+          -0.18000000000000016,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-5": {
+      "name": "D4 quarter note 5",
+      "local": {
+        "translation": [
+          14.91,
+          -0.2250000000000001,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-6": {
+      "name": "D4 quarter note 6",
+      "local": {
+        "translation": [
+          15.56,
+          -0.2250000000000001,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-quarter",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-note-7": {
+      "name": "C4 half note 7",
+      "local": {
+        "translation": [
+          16.21,
+          -0.27,
+          0.025
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-half",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-1": {
+      "name": "Lyric syllable How",
+      "local": {
+        "translation": [
+          12.10777,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-How",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-2": {
+      "name": "Lyric syllable I",
+      "local": {
+        "translation": [
+          12.92616,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-I",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-3": {
+      "name": "Lyric syllable won-",
+      "local": {
+        "translation": [
+          13.39328,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-won-hyphen",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-4": {
+      "name": "Lyric syllable der",
+      "local": {
+        "translation": [
+          14.11114,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-der",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-5": {
+      "name": "Lyric syllable what",
+      "local": {
+        "translation": [
+          14.69004,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-what",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-6": {
+      "name": "Lyric syllable you",
+      "local": {
+        "translation": [
+          15.398,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-you",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "system-6-lyric-7": {
+      "name": "Lyric syllable are",
+      "local": {
+        "translation": [
+          16.065730000000002,
+          -0.46999999999999975,
+          0.02
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lyric-are",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "title": {
+      "name": "Score title",
+      "local": {
+        "translation": [
+          0,
+          1.45,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-title",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "camera": {
+      "name": "Score camera",
+      "local": {
+        "translation": [
+          0,
+          0,
+          8
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "camera",
+        "data": {
+          "operation": "mogf.camera.perspective",
+          "version": 1,
+          "inputs": {},
+          "params": {
+            "fov_y": 0.7853981633974483,
+            "near": 0.1,
+            "far": 100
+          }
+        }
+      }
+    },
+    "root": {
+      "name": "Animated tilted score plane",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0.059964006479444595,
+          0,
+          0.9982005399352042
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "paper-background",
+            "title",
+            "panoramic-score"
+          ]
+        }
+      }
+    },
+    "paper-background": {
+      "name": "White paper background plane",
+      "local": {
+        "translation": [
+          0,
+          0,
+          -1
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "g-paper-background",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "scene-root": {
+      "name": "Panoramic scene",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "root",
+            "camera"
+          ]
+        }
+      }
+    },
+    "panoramic-score": {
+      "name": "One continuous score line with verse lyrics",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "panoramic-staff",
+            "panoramic-bars",
+            "panoramic-ledger",
+            "system-1-clef",
+            "system-1-note-1",
+            "system-1-note-2",
+            "system-1-note-3",
+            "system-1-note-4",
+            "system-1-note-5",
+            "system-1-note-6",
+            "system-1-note-7",
+            "system-2-note-1",
+            "system-2-note-2",
+            "system-2-note-3",
+            "system-2-note-4",
+            "system-2-note-5",
+            "system-2-note-6",
+            "system-2-note-7",
+            "system-3-note-1",
+            "system-3-note-2",
+            "system-3-note-3",
+            "system-3-note-4",
+            "system-3-note-5",
+            "system-3-note-6",
+            "system-3-note-7",
+            "system-4-note-1",
+            "system-4-note-2",
+            "system-4-note-3",
+            "system-4-note-4",
+            "system-4-note-5",
+            "system-4-note-6",
+            "system-4-note-7",
+            "system-5-note-1",
+            "system-5-note-2",
+            "system-5-note-3",
+            "system-5-note-4",
+            "system-5-note-5",
+            "system-5-note-6",
+            "system-5-note-7",
+            "system-6-note-1",
+            "system-6-note-2",
+            "system-6-note-3",
+            "system-6-note-4",
+            "system-6-note-5",
+            "system-6-note-6",
+            "system-6-note-7",
+            "system-1-lyric-1",
+            "system-1-lyric-2",
+            "system-1-lyric-3",
+            "system-1-lyric-4",
+            "system-1-lyric-5",
+            "system-1-lyric-6",
+            "system-1-lyric-7",
+            "system-2-lyric-1",
+            "system-2-lyric-2",
+            "system-2-lyric-3",
+            "system-2-lyric-4",
+            "system-2-lyric-5",
+            "system-2-lyric-6",
+            "system-2-lyric-7",
+            "system-3-lyric-1",
+            "system-3-lyric-2",
+            "system-3-lyric-3",
+            "system-3-lyric-4",
+            "system-3-lyric-5",
+            "system-3-lyric-6",
+            "system-3-lyric-7",
+            "system-4-lyric-1",
+            "system-4-lyric-2",
+            "system-4-lyric-3",
+            "system-4-lyric-4",
+            "system-4-lyric-5",
+            "system-4-lyric-6",
+            "system-4-lyric-7",
+            "system-5-lyric-1",
+            "system-5-lyric-2",
+            "system-5-lyric-3",
+            "system-5-lyric-4",
+            "system-5-lyric-5",
+            "system-5-lyric-6",
+            "system-5-lyric-7",
+            "system-6-lyric-1",
+            "system-6-lyric-2",
+            "system-6-lyric-3",
+            "system-6-lyric-4",
+            "system-6-lyric-5",
+            "system-6-lyric-6",
+            "system-6-lyric-7"
+          ]
+        }
+      }
+    },
+    "panoramic-staff": {
+      "name": "Panoramic Staff",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "panoramic-staff-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "panoramic-bars": {
+      "name": "Panoramic Bars",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "panoramic-bars-graph",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "panoramic-ledger": {
+      "name": "Panoramic Ledger",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "panoramic-ledger-graph",
+            "output": "batch"
+          }
+        }
+      }
+    }
+  },
+  "graphs": {
+    "g-quarter": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.music"
+                }
+              }
+            },
+            "params": {
+              "text": "\ud834\udd5f",
+              "size": 0.31,
+              "token_ids": [
+                "g-quarter-c00"
+              ],
+              "material": "note-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "g-half": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.music"
+                }
+              }
+            },
+            "params": {
+              "text": "\ud834\udd5e",
+              "size": 0.31,
+              "token_ids": [
+                "g-half-c00"
+              ],
+              "material": "note-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "g-clef": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.music"
+                }
+              }
+            },
+            "params": {
+              "text": "\ud834\udd1e",
+              "size": 0.36,
+              "token_ids": [
+                "g-clef-c00"
+              ],
+              "material": "note-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "g-title": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "Twinkle, Twinkle, Little Star",
+              "size": 0.27,
+              "token_ids": [
+                "g-title-c00",
+                "g-title-c01",
+                "g-title-c02",
+                "g-title-c03",
+                "g-title-c04",
+                "g-title-c05",
+                "g-title-c06",
+                "g-title-c07",
+                "g-title-c08",
+                "g-title-c09",
+                "g-title-c10",
+                "g-title-c11",
+                "g-title-c12",
+                "g-title-c13",
+                "g-title-c14",
+                "g-title-c15",
+                "g-title-c16",
+                "g-title-c17",
+                "g-title-c18",
+                "g-title-c19",
+                "g-title-c20",
+                "g-title-c21",
+                "g-title-c22",
+                "g-title-c23",
+                "g-title-c24",
+                "g-title-c25",
+                "g-title-c26",
+                "g-title-c27",
+                "g-title-c28"
+              ],
+              "material": "title-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-Twin-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "Twin-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-Twin-hyphen-c00",
+                "lyric-Twin-hyphen-c01",
+                "lyric-Twin-hyphen-c02",
+                "lyric-Twin-hyphen-c03",
+                "lyric-Twin-hyphen-c04"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-kle": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "kle",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-kle-c00",
+                "lyric-kle-c01",
+                "lyric-kle-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-twin-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "twin-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-twin-hyphen-c00",
+                "lyric-twin-hyphen-c01",
+                "lyric-twin-hyphen-c02",
+                "lyric-twin-hyphen-c03",
+                "lyric-twin-hyphen-c04"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-lit-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "lit-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-lit-hyphen-c00",
+                "lyric-lit-hyphen-c01",
+                "lyric-lit-hyphen-c02",
+                "lyric-lit-hyphen-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-tle": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "tle",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-tle-c00",
+                "lyric-tle-c01",
+                "lyric-tle-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-star": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "star",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-star-c00",
+                "lyric-star-c01",
+                "lyric-star-c02",
+                "lyric-star-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-How": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "How",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-How-c00",
+                "lyric-How-c01",
+                "lyric-How-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-I": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "I",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-I-c00"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-won-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "won-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-won-hyphen-c00",
+                "lyric-won-hyphen-c01",
+                "lyric-won-hyphen-c02",
+                "lyric-won-hyphen-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-der": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "der",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-der-c00",
+                "lyric-der-c01",
+                "lyric-der-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-what": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "what",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-what-c00",
+                "lyric-what-c01",
+                "lyric-what-c02",
+                "lyric-what-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-you": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "you",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-you-c00",
+                "lyric-you-c01",
+                "lyric-you-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-are": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "are",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-are-c00",
+                "lyric-are-c01",
+                "lyric-are-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-Up": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "Up",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-Up-c00",
+                "lyric-Up-c01"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-a-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "a-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-a-hyphen-c00",
+                "lyric-a-hyphen-c01"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-bove": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "bove",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-bove-c00",
+                "lyric-bove-c01",
+                "lyric-bove-c02",
+                "lyric-bove-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-the": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "the",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-the-c00",
+                "lyric-the-c01",
+                "lyric-the-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-world": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "world",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-world-c00",
+                "lyric-world-c01",
+                "lyric-world-c02",
+                "lyric-world-c03",
+                "lyric-world-c04"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-so": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "so",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-so-c00",
+                "lyric-so-c01"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-high": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "high",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-high-c00",
+                "lyric-high-c01",
+                "lyric-high-c02",
+                "lyric-high-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-Like": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "Like",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-Like-c00",
+                "lyric-Like-c01",
+                "lyric-Like-c02",
+                "lyric-Like-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-a": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "a",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-a-c00"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-dia-hyphen": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "dia-",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-dia-hyphen-c00",
+                "lyric-dia-hyphen-c01",
+                "lyric-dia-hyphen-c02",
+                "lyric-dia-hyphen-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-mond": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "mond",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-mond-c00",
+                "lyric-mond-c01",
+                "lyric-mond-c02",
+                "lyric-mond-c03"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-in": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "in",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-in-c00",
+                "lyric-in-c01"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "lyric-sky": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.text"
+                }
+              }
+            },
+            "params": {
+              "text": "sky",
+              "size": 0.18,
+              "token_ids": [
+                "lyric-sky-c00",
+                "lyric-sky-c01",
+                "lyric-sky-c02"
+              ],
+              "material": "lyric-ink",
+              "tolerance": 0.15,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.0,
+              "font_weight": 400
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    },
+    "g-paper-background": {
+      "nodes": {
+        "plane": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                54,
+                14
+              ]
+            }
+          }
+        },
+        "paper": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "plane",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "paper-sheet",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "paper-white"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "paper",
+          "port": "batch"
+        }
+      }
+    },
+    "panoramic-staff-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                38,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "panoramic-staff-0",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -0.18,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-staff-1",
+                  "placement": {
+                    "translation": [
+                      0,
+                      -0.09,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-staff-2",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-staff-3",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0.09,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-staff-4",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0.18,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "panoramic-bars-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.022,
+                0.42
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "panoramic-bars-1-0",
+                  "placement": {
+                    "translation": [
+                      -17.35,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-1-1",
+                  "placement": {
+                    "translation": [
+                      -14.75,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-1-2",
+                  "placement": {
+                    "translation": [
+                      -12.149999999999999,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-2-1",
+                  "placement": {
+                    "translation": [
+                      -8.85,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-2-2",
+                  "placement": {
+                    "translation": [
+                      -6.249999999999999,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-3-1",
+                  "placement": {
+                    "translation": [
+                      -2.949999999999999,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-3-2",
+                  "placement": {
+                    "translation": [
+                      -0.34999999999999876,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-4-1",
+                  "placement": {
+                    "translation": [
+                      2.9500000000000033,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-4-2",
+                  "placement": {
+                    "translation": [
+                      5.550000000000003,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-5-1",
+                  "placement": {
+                    "translation": [
+                      8.850000000000001,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-5-2",
+                  "placement": {
+                    "translation": [
+                      11.450000000000003,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-6-1",
+                  "placement": {
+                    "translation": [
+                      14.75,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-bars-6-2",
+                  "placement": {
+                    "translation": [
+                      17.35,
+                      0.0,
+                      0.01
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    },
+    "panoramic-ledger-graph": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.plane",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                0.19,
+                0.016
+              ]
+            }
+          }
+        },
+        "copies": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "panoramic-ledger-1-0",
+                  "placement": {
+                    "translation": [
+                      -17.189999999999998,
+                      -0.27,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-ledger-1-1",
+                  "placement": {
+                    "translation": [
+                      -16.54,
+                      -0.27,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-ledger-2-0",
+                  "placement": {
+                    "translation": [
+                      -7.389999999999999,
+                      -0.27,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-ledger-5-0",
+                  "placement": {
+                    "translation": [
+                      6.410000000000002,
+                      -0.27,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-ledger-5-1",
+                  "placement": {
+                    "translation": [
+                      7.060000000000002,
+                      -0.27,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                },
+                {
+                  "id": "panoramic-ledger-6-0",
+                  "placement": {
+                    "translation": [
+                      16.21,
+                      -0.27,
+                      0.015
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "staff-ink"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "copies",
+          "port": "batch"
+        }
+      }
+    }
+  },
+  "functions": {},
+  "materials": {
+    "staff-ink": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "note-ink": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "lyric-ink": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "title-ink": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "paper-white": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  },
+  "shaders": {},
+  "timelines": {
+    "motion": {
+      "tracks": [
+        {
+          "target": {
+            "table": "objects",
+            "record": "camera",
+            "slot": "transform.translation.x",
+            "instances": null
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "8",
+            "d": "1"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": -14.2,
+              "to": 14.2,
+              "ease": "linear"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "0"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "camera",
+            "slot": "camera.fov_y",
+            "instances": null
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "8",
+            "d": "1"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0.92,
+              "to": 0.82,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "1"
+        }
+      ]
+    }
+  },
+  "clips": {},
+  "media": {},
+  "effects": {},
+  "recordings": {},
+  "bakes": {},
+  "metadata": {}
+}

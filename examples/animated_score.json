@@ -1,0 +1,82 @@
+{
+  "format": "mogf.project",
+  "version": 1,
+  "project_id": "animated-score-poc",
+  "requirements": [],
+  "assets": {
+    "font.music": { "uri": "assets/fonts/NotoMusic-Regular.ttf", "kind": "font", "digest": null }
+  },
+  "states": {},
+  "compositions": {
+    "main": {
+      "size": [1280, 720],
+      "fps": { "n": "30", "d": "1" },
+      "duration": { "n": "4", "d": "1" },
+      "layers": [{ "kind": "native_3d", "data": { "root": "root", "camera": "camera", "lights": [], "transparent_sort": "authored_order", "effects": [] } }],
+      "timelines": ["motion"], "clips": [], "audio": [], "recording": null,
+      "output_profile": "linear-premultiplied-srgb-output"
+    }
+  },
+  "objects": {
+    "root": { "name": "Score scene", "local": { "translation": [0,0,0], "rotation": [0,0,0,1], "scale": [1,1,1] }, "body": { "kind": "group", "data": { "children": ["staff", "bars", "notes", "camera"] } } },
+    "staff": { "name": "Five staff lines", "local": { "translation": [0,0,0], "rotation": [0,0,0,1], "scale": [1,1,1] }, "body": { "kind": "draw", "data": { "batch": { "graph": "staff", "output": "batch" } } } },
+    "bars": { "name": "Measure bars", "local": { "translation": [0,0,0], "rotation": [0,0,0,1], "scale": [1,1,1] }, "body": { "kind": "draw", "data": { "batch": { "graph": "bars", "output": "batch" } } } },
+    "notes": { "name": "Music glyphs", "local": { "translation": [0,0,0.04], "rotation": [0,0,0,1], "scale": [1,1,1] }, "body": { "kind": "draw", "data": { "batch": { "graph": "notes", "output": "batch" } } } },
+    "camera": { "name": "Score camera", "local": { "translation": [0,0,8], "rotation": [0,0,0,1], "scale": [1,1,1] }, "body": { "kind": "camera", "data": { "operation": "mogf.camera.perspective", "version": 1, "inputs": {}, "params": { "fov_y": 0.7853981633974483, "near": 0.1, "far": 100 } } } }
+  },
+  "graphs": {
+    "staff": {
+      "nodes": {
+        "line": { "kind": "native", "data": { "operation": "mogf.geometry.plane", "version": 1, "inputs": {}, "params": { "size": [8.2, 0.025] } } },
+        "copies": { "kind": "native", "data": { "operation": "mogf.batch.explicit", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "line", "port": "geometry" } } }, "params": { "rows": [
+          { "id": "staff-1", "placement": { "translation": [0,0.8,0], "rotation": [0,0,0,1], "scale": [1,1,1] }, "material": "staff-ink" },
+          { "id": "staff-2", "placement": { "translation": [0,0.4,0], "rotation": [0,0,0,1], "scale": [1,1,1] }, "material": "staff-ink" },
+          { "id": "staff-3", "placement": { "translation": [0,0,0], "rotation": [0,0,0,1], "scale": [1,1,1] }, "material": "staff-ink" },
+          { "id": "staff-4", "placement": { "translation": [0,-0.4,0], "rotation": [0,0,0,1], "scale": [1,1,1] }, "material": "staff-ink" },
+          { "id": "staff-5", "placement": { "translation": [0,-0.8,0], "rotation": [0,0,0,1], "scale": [1,1,1] }, "material": "staff-ink" }
+        ] } } }
+      },
+      "outputs": { "batch": { "node": "copies", "port": "batch" } }
+    },
+    "bars": {
+      "nodes": {
+        "bar": { "kind": "native", "data": { "operation": "mogf.geometry.plane", "version": 1, "inputs": {}, "params": { "size": [0.035, 1.9] } } },
+        "copies": { "kind": "native", "data": { "operation": "mogf.batch.explicit", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "bar", "port": "geometry" } } }, "params": { "rows": [
+          { "id": "bar-start", "placement": { "translation": [-3.7,0,0.01], "rotation": [0,0,0,1], "scale": [1,1,1] }, "material": "bar-ink" },
+          { "id": "bar-end", "placement": { "translation": [3.7,0,0.01], "rotation": [0,0,0,1], "scale": [1,1,1] }, "material": "bar-ink" }
+        ] } } }
+      },
+      "outputs": { "batch": { "node": "copies", "port": "batch" } }
+    },
+    "notes": {
+      "nodes": {
+        "glyphs": { "kind": "native", "data": { "operation": "mogf.text.shaped", "version": 1, "inputs": { "font": { "kind": "record", "data": { "table": "assets", "record": "font.music" } } }, "params": {
+          "text": "𝄆 𝄙𝆏 𝅗𝅘𝅥𝅘𝅥𝅯𝅘𝅥𝅱 𝄞𝄟",
+          "size": 0.92,
+          "token_ids": ["symbol-1", "space-1", "symbol-2", "symbol-3", "space-2", "symbol-4", "symbol-5", "symbol-6", "symbol-7", "space-3", "symbol-8", "symbol-9"],
+          "material": "note-ink", "tolerance": 0.2, "quantization": 0.001,
+          "fill_rule": "nonzero", "extrusion_depth": 0.02, "max_width": 7.5
+        } } }
+      },
+      "outputs": { "batch": { "node": "glyphs", "port": "batch" } }
+    }
+  },
+  "functions": {},
+  "materials": {
+    "staff-ink": { "operation": "mogf.material.unlit", "version": 1, "inputs": {}, "params": { "color": [0.42,0.65,0.76,1] } },
+    "bar-ink": { "operation": "mogf.material.unlit", "version": 1, "inputs": {}, "params": { "color": [0.95,0.48,0.3,1] } },
+    "note-ink": { "operation": "mogf.material.unlit", "version": 1, "inputs": {}, "params": { "color": [0.98,0.83,0.48,1] } }
+  },
+  "shaders": {},
+  "timelines": {
+    "motion": { "tracks": [{
+      "target": { "table": "objects", "record": "notes", "slot": "transform.translation.y", "instances": null },
+      "clock": { "kind": "composition", "data": "main" },
+      "at": { "n": "0", "d": "1" },
+      "duration": { "n": "1", "d": "1" },
+      "curve": { "operation": "mogf.curve.from_to", "version": 1, "inputs": {}, "params": { "from": -0.45, "to": 0, "ease": "cubic_out" } },
+      "fill": "forward", "blend": "replace", "priority": 0, "ordinal": "0"
+    }] }
+  },
+  "clips": {}, "media": {}, "effects": {}, "recordings": {}, "bakes": {}, "metadata": {}
+}

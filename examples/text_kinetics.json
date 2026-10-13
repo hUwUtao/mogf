@@ -1,0 +1,1675 @@
+{
+  "format": "mogf.project",
+  "version": 1,
+  "project_id": "text-kinetics-mvp",
+  "requirements": [],
+  "assets": {
+    "font.main": {
+      "uri": "assets/fonts/NotoSans-VF.ttf",
+      "kind": "font",
+      "digest": null
+    }
+  },
+  "states": {},
+  "compositions": {
+    "main": {
+      "size": [
+        1280,
+        720
+      ],
+      "fps": {
+        "n": "60",
+        "d": "1"
+      },
+      "duration": {
+        "n": "3",
+        "d": "1"
+      },
+      "layers": [
+        {
+          "kind": "native_3d",
+          "data": {
+            "root": "root",
+            "camera": "camera",
+            "lights": [],
+            "transparent_sort": "authored_order",
+            "effects": []
+          }
+        }
+      ],
+      "timelines": [
+        "motion"
+      ],
+      "clips": [],
+      "audio": [],
+      "recording": null,
+      "output_profile": "linear-premultiplied-srgb-output"
+    }
+  },
+  "objects": {
+    "root": {
+      "name": "Scene root",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "title",
+            "camera"
+          ]
+        }
+      }
+    },
+    "title": {
+      "name": "Animated title",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "title",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "camera": {
+      "name": "Perspective camera",
+      "local": {
+        "translation": [
+          0,
+          0,
+          8
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "camera",
+        "data": {
+          "operation": "mogf.camera.perspective",
+          "version": 1,
+          "inputs": {},
+          "params": {
+            "fov_y": 0.7853981633974483,
+            "near": 0.1,
+            "far": 100
+          }
+        }
+      }
+    }
+  },
+  "graphs": {
+    "title": {
+      "nodes": {
+        "glyphs": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.main"
+                }
+              }
+            },
+            "params": {
+              "text": "MOGF MVP",
+              "size": 1.4,
+              "token_ids": [
+                "c.m",
+                "c.o",
+                "c.g",
+                "c.f",
+                "c.space",
+                "c.m2",
+                "c.v",
+                "c.p"
+              ],
+              "material": "cyan",
+              "tolerance": 0.25,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.32,
+              "max_width": 4.8,
+              "font_weight": 150
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "glyphs",
+          "port": "batch"
+        }
+      }
+    }
+  },
+  "functions": {},
+  "materials": {
+    "cyan": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0.16,
+          0.78,
+          0.98,
+          1
+        ]
+      }
+    }
+  },
+  "shaders": {},
+  "timelines": {
+    "motion": {
+      "tracks": [
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.translation.x",
+            "instances": [
+              "word:c.m"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "4",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": -1.35,
+              "to": 0,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "0"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.translation.z",
+            "instances": [
+              "word:c.m"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "9",
+            "d": "10"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": -1.1,
+              "to": 0.35,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "1"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.translation.x",
+            "instances": [
+              "word:c.m2"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "1",
+            "d": "4"
+          },
+          "duration": {
+            "n": "4",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 1.35,
+              "to": 0,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "2"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.translation.z",
+            "instances": [
+              "word:c.m2"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "1",
+            "d": "4"
+          },
+          "duration": {
+            "n": "9",
+            "d": "10"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": -1.1,
+              "to": 0.35,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "3"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "text.weight",
+            "instances": null
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "11",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 150,
+              "to": 850,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "4"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.m"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "1",
+            "d": "4"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0,
+              "to": 1,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "2"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.o"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "1",
+            "d": "20"
+          },
+          "duration": {
+            "n": "1",
+            "d": "4"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0,
+              "to": 1,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "3"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.g"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "1",
+            "d": "10"
+          },
+          "duration": {
+            "n": "1",
+            "d": "4"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0,
+              "to": 1,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "4"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.f"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "3",
+            "d": "20"
+          },
+          "duration": {
+            "n": "1",
+            "d": "4"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0,
+              "to": 1,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "5"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.m2"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "1",
+            "d": "4"
+          },
+          "duration": {
+            "n": "1",
+            "d": "4"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0,
+              "to": 1,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "6"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.v"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "3",
+            "d": "10"
+          },
+          "duration": {
+            "n": "1",
+            "d": "4"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0,
+              "to": 1,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "7"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.p"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "7",
+            "d": "20"
+          },
+          "duration": {
+            "n": "1",
+            "d": "4"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 0,
+              "to": 1,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "8"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.m"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "0",
+            "d": "1"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "to_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": -1,
+              "settle_bounce": "at_end",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "9"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.o"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "1",
+            "d": "20"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                -1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "to_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": 1,
+              "settle_bounce": "at_end",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "10"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.g"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "1",
+            "d": "10"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "to_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": -1,
+              "settle_bounce": "at_end",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "11"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.f"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "3",
+            "d": "20"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                -1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "to_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": 1,
+              "settle_bounce": "at_end",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "12"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.m2"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "1",
+            "d": "4"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                -1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "to_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": 1,
+              "settle_bounce": "at_end",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "13"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.v"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "3",
+            "d": "10"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "to_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": -1,
+              "settle_bounce": "at_end",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "14"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.p"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "7",
+            "d": "20"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                -1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "to_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": 1,
+              "settle_bounce": "at_end",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "15"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.m"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "6100000000000001",
+            "d": "2500000000000000"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "to_quaternion": [
+                0.0,
+                1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": 1,
+              "settle_bounce": "at_start",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "16"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.m"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "6100000000000001",
+            "d": "2500000000000000"
+          },
+          "duration": {
+            "n": "2",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 1.0,
+              "to": 0.0,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "17"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.o"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "6000000000000001",
+            "d": "2500000000000000"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "to_quaternion": [
+                0.0,
+                -1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": -1,
+              "settle_bounce": "at_start",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "18"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.o"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "6000000000000001",
+            "d": "2500000000000000"
+          },
+          "duration": {
+            "n": "2",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 1.0,
+              "to": 0.0,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "19"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.g"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "23600000000000003",
+            "d": "10000000000000000"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "to_quaternion": [
+                0.0,
+                1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": 1,
+              "settle_bounce": "at_start",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "20"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.g"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "23600000000000003",
+            "d": "10000000000000000"
+          },
+          "duration": {
+            "n": "2",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 1.0,
+              "to": 0.0,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "21"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.f"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "23200000000000003",
+            "d": "10000000000000000"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "to_quaternion": [
+                0.0,
+                -1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": -1,
+              "settle_bounce": "at_start",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "22"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.f"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "23200000000000003",
+            "d": "10000000000000000"
+          },
+          "duration": {
+            "n": "2",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 1.0,
+              "to": 0.0,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "23"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.m2"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "56",
+            "d": "25"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "to_quaternion": [
+                0.0,
+                -1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": -1,
+              "settle_bounce": "at_start",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "24"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.m2"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "56",
+            "d": "25"
+          },
+          "duration": {
+            "n": "2",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 1.0,
+              "to": 0.0,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "25"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.v"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "11",
+            "d": "5"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "to_quaternion": [
+                0.0,
+                1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": 1,
+              "settle_bounce": "at_start",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "26"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.v"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "11",
+            "d": "5"
+          },
+          "duration": {
+            "n": "2",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 1.0,
+              "to": 0.0,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "27"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "transform.rotation",
+            "instances": [
+              "c.p"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "54",
+            "d": "25"
+          },
+          "duration": {
+            "n": "11",
+            "d": "20"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "ease": "linear",
+              "from_quaternion": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "to_quaternion": [
+                0.0,
+                -1.0,
+                0.0,
+                6.123233995736766e-17
+              ],
+              "rotation_unit": "quaternion_xyzw",
+              "rotation_axis": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "spin_turns": -1,
+              "settle_bounce": "at_start",
+              "settle_bounce_radians": 0.14
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "28"
+        },
+        {
+          "target": {
+            "table": "objects",
+            "record": "title",
+            "slot": "material.opacity",
+            "instances": [
+              "c.p"
+            ]
+          },
+          "clock": {
+            "kind": "composition",
+            "data": "main"
+          },
+          "at": {
+            "n": "54",
+            "d": "25"
+          },
+          "duration": {
+            "n": "2",
+            "d": "5"
+          },
+          "curve": {
+            "operation": "mogf.curve.from_to",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "from": 1.0,
+              "to": 0.0,
+              "ease": "cubic_out"
+            }
+          },
+          "fill": "forward",
+          "blend": "replace",
+          "priority": 0,
+          "ordinal": "29"
+        }
+      ]
+    }
+  },
+  "clips": {},
+  "media": {},
+  "effects": {},
+  "recordings": {},
+  "bakes": {},
+  "metadata": {}
+}

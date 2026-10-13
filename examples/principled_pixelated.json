@@ -1,0 +1,80 @@
+{
+  "format": "mogf.project",
+  "version": 1,
+  "project_id": "principled-pixelated-composition",
+  "requirements": [],
+  "imports": [
+    { "uri": "principled_plastic.json" }
+  ],
+  "assets": {
+    "camera_pixelate_source": {
+      "uri": "shaders/pixelate_camera.wgsl",
+      "kind": "shader",
+      "digest": null
+    },
+    "wave_vertex_source": {
+      "uri": "shaders/project_wave_deform.wgsl",
+      "kind": "shader",
+      "digest": null
+    },
+    "warm_cool_grade_source": {
+      "uri": "shaders/warm_cool_grade.wgsl",
+      "kind": "shader",
+      "digest": null
+    }
+  },
+  "states": {},
+  "compositions": {
+    "pixelated": {
+      "size": [1280, 720],
+      "fps": { "n": "30", "d": "1" },
+      "duration": { "n": "4", "d": "1" },
+      "layers": [
+        {
+          "kind": "native_3d",
+          "data": {
+            "root": "root",
+            "camera": "camera",
+            "lights": ["key", "spot"],
+            "transparent_sort": "authored_order",
+            "vertex_shader": "project_wave",
+            "effects": ["camera_pixelate", "warm_cool_grade"]
+          }
+        }
+      ],
+      "timelines": [],
+      "clips": [],
+      "audio": [],
+      "recording": null,
+      "output_profile": "linear-premultiplied-srgb-output"
+    }
+  },
+  "objects": {},
+  "graphs": {},
+  "functions": {},
+  "materials": {},
+  "shaders": {
+    "project_wave": {
+      "asset": "wave_vertex_source",
+      "stage": "vertex"
+    },
+    "camera_pixelate": {
+      "asset": "camera_pixelate_source",
+      "stage": "camera_effect"
+    },
+    "warm_cool_grade": {
+      "asset": "warm_cool_grade_source",
+      "stage": "camera_effect"
+    }
+  },
+  "timelines": {},
+  "clips": {},
+  "media": {},
+  "effects": {
+    "camera_pixelate": { "shader": "camera_pixelate" },
+    "warm_cool_grade": { "shader": "warm_cool_grade" }
+  },
+  "recordings": {},
+  "bakes": {},
+  "metadata": {}
+}

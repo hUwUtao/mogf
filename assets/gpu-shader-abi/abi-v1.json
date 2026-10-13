@@ -1,0 +1,119 @@
+{
+  "abi": "mogf.surface",
+  "version": 1,
+  "shader_record_version_field": "abi_version",
+  "legacy_shader_record_default": 1,
+  "wgsl": "src/editor_gpu.wgsl",
+  "records": [
+    {
+      "host": "CameraGpu",
+      "wgsl": "Camera",
+      "size": 112,
+      "alignment": 16,
+      "fields": [
+        { "host": "view_rows", "wgsl": "view_rows", "offset": 0 },
+        { "host": "projection", "wgsl": "projection", "offset": 64 },
+        { "host": "flags", "wgsl": "flags", "offset": 80 },
+        { "host": "shadow", "wgsl": "shadow", "offset": 96 }
+      ]
+    },
+    {
+      "host": "InstanceGpu",
+      "wgsl": "InstanceData",
+      "size": 192,
+      "alignment": 16,
+      "fields": [
+        { "host": "rows", "wgsl": "model_rows", "offset": 0 },
+        { "host": "color", "wgsl": "color", "offset": 64 },
+        { "host": "bounds_min", "wgsl": "bounds_min", "offset": 80 },
+        { "host": "bounds_max", "wgsl": "bounds_max", "offset": 96 },
+        { "host": "batch", "wgsl": "batch", "offset": 112 },
+        { "host": "material", "wgsl": "material", "offset": 128 },
+        { "host": "shader_params", "wgsl": "shader_params", "offset": 144 },
+        { "host": "imported_params", "wgsl": "imported_params", "offset": 160 },
+        { "host": "shadow_flags", "wgsl": "shadow_flags", "offset": 176 }
+      ]
+    },
+    {
+      "host": "LightGpu",
+      "wgsl": "LightData",
+      "size": 96,
+      "alignment": 16,
+      "fields": [
+        { "host": "position", "wgsl": "position", "offset": 0 },
+        { "host": "direction", "wgsl": "direction", "offset": 16 },
+        { "host": "color_intensity", "wgsl": "color_intensity", "offset": 32 },
+        { "host": "kind", "wgsl": "kind", "offset": 48 },
+        { "host": "cone_cosines", "wgsl": "cone_cosines", "offset": 64 },
+        { "host": "shadow_params", "wgsl": "shadow_params", "offset": 80 }
+      ]
+    },
+    {
+      "host": "DrawIndirectGpu",
+      "wgsl": "IndirectDraw",
+      "size": 16,
+      "alignment": 4,
+      "fields": [
+        { "host": "vertex_count", "wgsl": "vertex_count", "offset": 0 },
+        { "host": "instance_count", "wgsl": "instance_count", "offset": 4 },
+        { "host": "first_vertex", "wgsl": "first_vertex", "offset": 8 },
+        { "host": "first_instance", "wgsl": "first_instance", "offset": 12 }
+      ]
+    }
+  ],
+  "draw_indexing": {
+    "instance_vertex_buffer": "batch_slice_local",
+    "instance_storage_buffer": "batch_base_plus_instance_index",
+    "indirect_first_instance": 0
+  },
+  "resources": {
+    "surface": [
+      { "group": 0, "binding": 0, "name": "camera", "kind": "uniform" },
+      { "group": 0, "binding": 1, "name": "lights", "kind": "read_storage" },
+      { "group": 0, "binding": 2, "name": "instances", "kind": "read_storage" },
+      { "group": 0, "binding": 3, "name": "compact_instances", "kind": "read_storage" },
+      { "group": 1, "binding": 0, "name": "shadow_camera", "kind": "uniform" },
+      { "group": 1, "binding": 1, "name": "shadow_depth", "kind": "depth_texture" },
+      { "group": 1, "binding": 2, "name": "shadow_sampler", "kind": "comparison_sampler" },
+      { "group": 1, "binding": 3, "name": "shadow_transmittance", "kind": "float_texture" },
+      { "group": 1, "binding": 4, "name": "shadow_filter_sampler", "kind": "comparison_sampler" },
+      { "group": 1, "binding": 5, "name": "shadow_transmittance_sampler", "kind": "sampler" },
+      { "group": 2, "binding": 0, "name": "mogf_scene_color_buffer", "kind": "float_texture" },
+      { "group": 2, "binding": 1, "name": "mogf_scene_color_sampler", "kind": "sampler" },
+      { "group": 3, "binding": 0, "name": "mogf_image", "kind": "float_texture" },
+      { "group": 3, "binding": 1, "name": "mogf_image_sampler", "kind": "sampler" },
+      { "group": 3, "binding": 2, "name": "mogf_normal_image", "kind": "float_texture" },
+      { "group": 3, "binding": 3, "name": "mogf_normal_sampler", "kind": "sampler" },
+      { "group": 3, "binding": 4, "name": "mogf_mr_image", "kind": "float_texture" },
+      { "group": 3, "binding": 5, "name": "mogf_mr_sampler", "kind": "sampler" },
+      { "group": 3, "binding": 6, "name": "mogf_occlusion_image", "kind": "float_texture" },
+      { "group": 3, "binding": 7, "name": "mogf_occlusion_sampler", "kind": "sampler" },
+      { "group": 3, "binding": 8, "name": "mogf_emissive_image", "kind": "float_texture" },
+      { "group": 3, "binding": 9, "name": "mogf_emissive_sampler", "kind": "sampler" }
+    ]
+  },
+  "material_hooks": {
+    "surface": "fn mogf_surface(input: VertexOut) -> vec4<f32>",
+    "vertex": "fn mogf_vertex(input: VertexOut) -> VertexOut",
+    "deform": "fn mogf_deform(position: vec3<f32>, shader_params: vec4<f32>) -> vec3<f32>",
+    "shadow_opacity_optional": "fn mogf_shadow_opacity(input: VertexOut) -> f32"
+  },
+  "material_parameters": {
+    "shader_params": { "type": "vec4<f32>", "slot": "InstanceGpu.shader_params" },
+    "imported_params": { "type": "vec4<f32>", "slot": "InstanceGpu.imported_params" }
+  },
+  "texture_slots": [
+    "base_color",
+    "normal",
+    "metallic_roughness",
+    "occlusion",
+    "emissive"
+  ],
+  "conventions": {
+    "scene_color": "linear",
+    "surface_output": "straight_rgba",
+    "texture_uv_crop": "mix(rect_min, rect_max, source_uv)",
+    "image_uv_no_image": "source_uv_passthrough",
+    "domain_identity": "stable_ids_are_not_gpu_indices"
+  }
+}
