@@ -1,6 +1,8 @@
 use std::{
     collections::{HashMap, HashSet},
+    env, fs,
     hash::{Hash, Hasher},
+    path::PathBuf,
     sync::Arc,
 };
 
@@ -21,6 +23,101 @@ use crate::{
 };
 
 pub(super) mod offscreen;
+
+#[derive(Clone)]
+pub(super) struct PipelineCacheStore {
+    cache: Option<wgpu::PipelineCache>,
+    path: Option<PathBuf>,
+}
+
+impl PipelineCacheStore {
+    pub(super) fn new(adapter: &wgpu::Adapter, device: &wgpu::Device) -> Self {
+        if adapter.get_info().backend != wgpu::Backend::Vulkan
+            || !device.features().contains(wgpu::Features::PIPELINE_CACHE)
+        {
+            return Self {
+                cache: None,
+                path: None,
+            };
+        }
+        let Some(key) = wgpu::util::pipeline_cache_key(&adapter.get_info()) else {
+            return Self {
+                cache: None,
+                path: None,
+            };
+        };
+        let Some(directory) = pipeline_cache_directory() else {
+            return Self {
+                cache: None,
+                path: None,
+            };
+        };
+        let path = directory.join(format!("{key}.wgpu-cache"));
+        let data = fs::read(&path).ok();
+        // The file is private application cache data written only from get_data().
+        // wgpu's fallback mode discards incompatible/corrupt cache data.
+        let cache = unsafe {
+            device.create_pipeline_cache(&wgpu::PipelineCacheDescriptor {
+                label: Some("mogf-persistent-vulkan-pipeline-cache"),
+                data: data.as_deref(),
+                fallback: true,
+            })
+        };
+        Self {
+            cache: Some(cache),
+            path: Some(path),
+        }
+    }
+
+    fn cache(&self) -> Option<wgpu::PipelineCache> {
+        self.cache.clone()
+    }
+
+    pub(super) fn flush(&self) {
+        let (Some(cache), Some(path)) = (&self.cache, &self.path) else {
+            return;
+        };
+        let Some(data) = cache.get_data() else {
+            return;
+        };
+        let Some(directory) = path.parent() else {
+            return;
+        };
+        if fs::create_dir_all(directory).is_err() {
+            return;
+        }
+        let temporary = path.with_extension(format!("tmp-{}", std::process::id()));
+        if fs::write(&temporary, data).is_ok() {
+            let _ = fs::rename(&temporary, path);
+            let _ = fs::remove_file(temporary);
+        }
+    }
+}
+
+impl Drop for PipelineCacheStore {
+    fn drop(&mut self) {
+        self.flush();
+    }
+}
+
+fn pipeline_cache_directory() -> Option<PathBuf> {
+    if let Some(path) = env::var_os("XDG_CACHE_HOME") {
+        return Some(PathBuf::from(path).join("mogf/pipelines"));
+    }
+    #[cfg(target_os = "windows")]
+    if let Some(path) = env::var_os("LOCALAPPDATA") {
+        return Some(PathBuf::from(path).join("mogf/pipelines"));
+    }
+    #[cfg(target_os = "macos")]
+    if let Some(path) = env::var_os("HOME") {
+        return Some(PathBuf::from(path).join("Library/Caches/mogf/pipelines"));
+    }
+    #[cfg(not(any(target_os = "windows", target_os = "macos")))]
+    if let Some(path) = env::var_os("HOME") {
+        return Some(PathBuf::from(path).join(".cache/mogf/pipelines"));
+    }
+    None
+}
 
 const MAX_CACHED_GEOMETRY_BYTES: u64 = 256 * 1024 * 1024;
 const MAX_GPU_LIGHTS: usize = 8;
@@ -165,8 +262,8 @@ impl RenderSettings {
         effect_shader: Option<String>,
         profile: RenderProfile,
     ) -> Result<Self, String> {
-        if !matches!(sample_count, 1 | 4) {
-            return Err("MSAA sample count must be one of 1 or 4".into());
+        if !matches!(sample_count, 1 | 2 | 4) {
+            return Err("MSAA sample count must be one of 1, 2, or 4".into());
         }
         if let Some(source) = &surface_shader {
             let shader = include_str!("editor_gpu.wgsl")
@@ -777,6 +874,7 @@ struct ProjectVertexPipelines {
 struct GpuResources {
     target_format: wgpu::TextureFormat,
     settings: RenderSettings,
+    pipeline_cache: Option<wgpu::PipelineCache>,
     prepared_frame: Option<Arc<SceneFrame>>,
     cull_bind_group: wgpu::BindGroup,
     shadow_cull_bind_group: wgpu::BindGroup,
@@ -872,12 +970,35 @@ pub(super) fn vulkan_wgpu_configuration() -> Result<eframe::egui_wgpu::WgpuConfi
         eframe::egui_wgpu::WgpuSetup::CreateNew(setup) => {
             setup.instance_descriptor.backends = wgpu::Backends::VULKAN;
             setup.power_preference = wgpu::PowerPreference::HighPerformance;
+            let device_descriptor = Arc::clone(&setup.device_descriptor);
+            setup.device_descriptor = Arc::new(move |adapter| {
+                let mut descriptor = device_descriptor(adapter);
+                if adapter.features().contains(wgpu::Features::PIPELINE_CACHE) {
+                    descriptor.required_features |= wgpu::Features::PIPELINE_CACHE;
+                }
+                if adapter
+                    .features()
+                    .contains(wgpu::Features::TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES)
+                {
+                    descriptor.required_features |=
+                        wgpu::Features::TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES;
+                }
+                descriptor
+            });
         }
         eframe::egui_wgpu::WgpuSetup::Existing(_) => {
             return Err("MOGF requires its own Vulkan-backed wgpu surface".into());
         }
     }
     Ok(config)
+}
+
+pub(super) fn install_pipeline_cache(
+    adapter: &wgpu::Adapter,
+    device: &wgpu::Device,
+    callback_resources: &mut CallbackResources,
+) {
+    callback_resources.insert(PipelineCacheStore::new(adapter, device));
 }
 
 pub(super) fn callback_shape(
@@ -1600,16 +1721,21 @@ impl CallbackTrait for GpuCallback {
         egui_encoder: &mut wgpu::CommandEncoder,
         callback_resources: &mut CallbackResources,
     ) -> Vec<wgpu::CommandBuffer> {
+        let pipeline_cache = callback_resources
+            .get::<PipelineCacheStore>()
+            .and_then(PipelineCacheStore::cache);
         if callback_resources.get::<GpuResources>().is_none() {
             callback_resources.insert(GpuResources::new(
                 device,
                 self.target_format,
                 &self.settings,
+                pipeline_cache.clone(),
             ));
         }
         let resources = callback_resources.get_mut::<GpuResources>().unwrap();
         if resources.target_format != self.target_format || resources.settings != *self.settings {
-            *resources = GpuResources::new(device, self.target_format, &self.settings);
+            *resources =
+                GpuResources::new(device, self.target_format, &self.settings, pipeline_cache);
         }
         if !self.effect_sources.is_empty() {
             resources.ensure_camera_effect_pipelines(device, &self.effect_sources);
@@ -2179,6 +2305,7 @@ fn create_surface_pipelines(
     layout: &wgpu::PipelineLayout,
     shader: &wgpu::ShaderModule,
     label_prefix: &str,
+    pipeline_cache: Option<&wgpu::PipelineCache>,
 ) -> SurfacePipelines {
     let vertex_attributes = [
         wgpu::VertexAttribute {
@@ -2326,7 +2453,7 @@ fn create_surface_pipelines(
                 })],
             }),
             multiview_mask: None,
-            cache: None,
+            cache: pipeline_cache,
         })
     };
     SurfacePipelines {
@@ -2340,6 +2467,7 @@ fn create_shadow_pipeline(
     module: &wgpu::ShaderModule,
     render_bind_group_layout: &wgpu::BindGroupLayout,
     alpha_pipeline_layout: &wgpu::PipelineLayout,
+    pipeline_cache: Option<&wgpu::PipelineCache>,
 ) -> ShadowPipelines {
     const FLOAT4: wgpu::VertexFormat = wgpu::VertexFormat::Float32x4;
     let vertex_attributes = [
@@ -2514,7 +2642,7 @@ fn create_shadow_pipeline(
                 targets,
             }),
             multiview_mask: None,
-            cache: None,
+            cache: pipeline_cache,
         })
     };
     ShadowPipelines {
@@ -2575,6 +2703,7 @@ fn create_camera_effect_pipeline(
     sample_count: u32,
     source: &str,
     layout: &wgpu::BindGroupLayout,
+    pipeline_cache: Option<&wgpu::PipelineCache>,
 ) -> wgpu::RenderPipeline {
     let shader_source = include_str!("editor_effect.wgsl").replace("// MOGF_EFFECT_HOOK", source);
     let module = device.create_shader_module(wgpu::ShaderModuleDescriptor {
@@ -2618,7 +2747,7 @@ fn create_camera_effect_pipeline(
             })],
         }),
         multiview_mask: None,
-        cache: None,
+        cache: pipeline_cache,
     })
 }
 
@@ -2720,6 +2849,7 @@ impl GpuResources {
                 self.effect_layout
                     .as_ref()
                     .expect("effect layout was created"),
+                self.pipeline_cache.as_ref(),
             );
             self.effect_pipelines.insert(Arc::clone(source), pipeline);
         }
@@ -2974,6 +3104,7 @@ impl GpuResources {
         device: &wgpu::Device,
         target_format: wgpu::TextureFormat,
         settings: &RenderSettings,
+        pipeline_cache: Option<wgpu::PipelineCache>,
     ) -> Self {
         let sample_count = u32::from(settings.sample_count);
         let default_surface = "fn mogf_surface(input: VertexOut) -> vec4<f32> { return mogf_default_lit_surface(input); }";
@@ -3489,7 +3620,7 @@ impl GpuResources {
             module: &shader,
             entry_point: Some("cull_instances"),
             compilation_options: Default::default(),
-            cache: None,
+            cache: pipeline_cache.as_ref(),
         });
         let float4 = wgpu::VertexFormat::Float32x4;
         let vertex_attributes = [
@@ -3632,7 +3763,7 @@ impl GpuResources {
                     })],
                 }),
                 multiview_mask: None,
-                cache: None,
+                cache: pipeline_cache.as_ref(),
             })
         };
         let opaque_pipeline = make_pipeline("mogf-editor-opaque-pipeline", true);
@@ -3642,6 +3773,7 @@ impl GpuResources {
             &shader,
             &render_bind_group_layout,
             &render_pipeline_layout,
+            pipeline_cache.as_ref(),
         );
         let (effect_layout, effect_sampler, effect_pipelines) =
             if let Some(effect_source) = settings.effect_shader.as_deref() {
@@ -3653,6 +3785,7 @@ impl GpuResources {
                     sample_count,
                     effect_source,
                     &layout,
+                    pipeline_cache.as_ref(),
                 );
                 let source: Arc<str> = Arc::from(effect_source);
                 (
@@ -3666,6 +3799,7 @@ impl GpuResources {
         Self {
             target_format,
             settings: settings.clone(),
+            pipeline_cache,
             prepared_frame: None,
             cull_bind_group,
             shadow_cull_bind_group,
@@ -4121,6 +4255,7 @@ impl GpuResources {
                     &self.render_pipeline_layout,
                     &module,
                     "mogf-project-vertex",
+                    self.pipeline_cache.as_ref(),
                 );
                 let shadow_shader_source = include_str!("editor_gpu.wgsl")
                     .replace("// MOGF_VERTEX_HOOK", default_vertex)
@@ -4139,6 +4274,7 @@ impl GpuResources {
                     &shadow_module,
                     &self.render_bind_group_layout,
                     &self.render_pipeline_layout,
+                    self.pipeline_cache.as_ref(),
                 );
                 self.project_vertex_pipelines = Some(ProjectVertexPipelines {
                     source: Arc::clone(source),
@@ -4199,6 +4335,7 @@ impl GpuResources {
                 &self.render_pipeline_layout,
                 &module,
                 &format!("mogf-project-material-{id}"),
+                self.pipeline_cache.as_ref(),
             );
             let shadow_shader_source = include_str!("editor_gpu.wgsl")
                 .replace("// MOGF_VERTEX_HOOK", default_vertex)
@@ -4223,6 +4360,7 @@ impl GpuResources {
                 &shadow_module,
                 &self.render_bind_group_layout,
                 &self.render_pipeline_layout,
+                self.pipeline_cache.as_ref(),
             );
             self.project_surface_pipelines.insert(
                 id.clone(),

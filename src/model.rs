@@ -213,9 +213,72 @@ pub(super) struct Composition {
     pub(super) layers: Vec<Layer>,
     pub(super) timelines: Vec<String>,
     pub(super) clips: Vec<String>,
-    pub(super) audio: Vec<String>,
+    pub(super) audio: Vec<AudioClip>,
+    #[serde(default)]
+    pub(super) audio_buses: BTreeMap<String, AudioBus>,
     pub(super) recording: Option<String>,
     pub(super) output_profile: String,
+}
+
+/// Audio can be authored as a legacy asset ID or as a scheduled timeline clip.
+#[derive(Debug, Deserialize)]
+#[serde(untagged)]
+pub(super) enum AudioClip {
+    Asset(String),
+    Scheduled(ScheduledAudioClip),
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub(super) struct ScheduledAudioClip {
+    pub(super) asset: String,
+    pub(super) start: f64,
+    #[serde(default = "default_audio_bus")]
+    pub(super) channel: String,
+    #[serde(default)]
+    pub(super) source_start: f64,
+    #[serde(default)]
+    pub(super) duration: Option<f64>,
+    #[serde(default = "one_f64")]
+    pub(super) gain: f64,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub(super) struct AudioBus {
+    #[serde(default = "one_f64")]
+    pub(super) gain: f64,
+    #[serde(default)]
+    pub(super) pan: f64,
+}
+
+impl Default for AudioBus {
+    fn default() -> Self {
+        Self {
+            gain: 1.0,
+            pan: 0.0,
+        }
+    }
+}
+
+fn default_audio_bus() -> String {
+    "main".to_owned()
+}
+
+impl AudioClip {
+    pub(super) fn asset_id(&self) -> &str {
+        match self {
+            Self::Asset(asset) => asset,
+            Self::Scheduled(clip) => &clip.asset,
+        }
+    }
+
+    pub(super) fn channel_id(&self) -> &str {
+        match self {
+            Self::Asset(_) => "main",
+            Self::Scheduled(clip) => &clip.channel,
+        }
+    }
 }
 
 #[derive(Debug, Deserialize)]

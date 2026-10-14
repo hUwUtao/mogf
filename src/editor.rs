@@ -52,6 +52,11 @@ pub(super) fn run(
             let Some(render_state) = cc.wgpu_render_state.as_ref() else {
                 return Err(std::io::Error::other("editor requires a Vulkan wgpu renderer").into());
             };
+            editor_gpu::install_pipeline_cache(
+                &render_state.adapter,
+                &render_state.device,
+                &mut render_state.renderer.write().callback_resources,
+            );
             let adapter = render_state.adapter.get_info();
             if adapter.backend != eframe::wgpu::Backend::Vulkan {
                 return Err(std::io::Error::other(format!(

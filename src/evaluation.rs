@@ -81,10 +81,27 @@ pub(super) fn sample_with_profile<'a>(
         "clips and recordings are outside this MVP slice",
     )?;
     require(
-        composition.audio.len() <= 1,
-        "MVP supports one composition-aligned audio asset",
+        composition.audio_buses.len() <= 32
+            && composition.audio_buses.iter().all(|(id, bus)| {
+                !id.is_empty()
+                    && bus.gain.is_finite()
+                    && (bus.gain as f32).is_finite()
+                    && bus.pan.is_finite()
+                    && (-1.0..=1.0).contains(&bus.pan)
+            }),
+        "audio buses need nonempty IDs, finite gain, and pan in [-1, 1] (maximum 32)",
     )?;
-    for id in &composition.audio {
+    for clip in &composition.audio {
+        let id = clip.asset_id();
+        require(
+            !clip.channel_id().is_empty()
+                && (clip.channel_id() == "main"
+                    || composition.audio_buses.contains_key(clip.channel_id())),
+            format!(
+                "audio clip {id:?} references an unknown bus {:?}",
+                clip.channel_id()
+            ),
+        )?;
         let asset = project
             .assets
             .get(id)
@@ -93,6 +110,19 @@ pub(super) fn sample_with_profile<'a>(
             asset.kind == "audio",
             "composition audio must reference an audio asset",
         )?;
+        if let AudioClip::Scheduled(clip) = clip {
+            require(
+                clip.start.is_finite()
+                    && clip.start >= 0.0
+                    && clip.source_start.is_finite()
+                    && clip.source_start >= 0.0
+                    && clip.gain.is_finite()
+                    && clip
+                        .duration
+                        .is_none_or(|duration| duration.is_finite() && duration > 0.0),
+                format!("audio clip {id:?} has invalid timing or gain"),
+            )?;
+        }
         let _ = resolve_asset(project_root, asset)?;
     }
     require(

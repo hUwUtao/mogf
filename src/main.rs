@@ -3,8 +3,10 @@
 use std::{
     collections::BTreeMap,
     fs,
+    io::{self, IsTerminal, Write},
     path::{Component, Path, PathBuf},
-    process::ExitCode,
+    process::{Child, ChildStdin, Command, ExitCode, Stdio},
+    time::Instant,
 };
 
 use clap::{Args, Parser, Subcommand};
@@ -29,11 +31,28 @@ mod validation;
 
 use model::*;
 
+#[derive(Clone, Copy, Debug, clap::ValueEnum)]
+enum MsaaSetting {
+    #[value(name = "off", alias = "1")]
+    Off,
+    #[value(name = "2x", alias = "2")]
+    X2,
+    #[value(name = "4x", alias = "4")]
+    X4,
+}
+
+impl MsaaSetting {
+    fn sample_count(self) -> u16 {
+        match self {
+            Self::Off => 1,
+            Self::X2 => 2,
+            Self::X4 => 4,
+        }
+    }
+}
+
 #[derive(Debug, Args)]
 struct RendererArgs {
-    /// MSAA sample count (1 disables multisampling).
-    #[arg(long, value_parser = clap::value_parser!(u16).range(1..=8), default_value_t = 4)]
-    msaa: u16,
     /// Color blending behavior.
     #[arg(long, value_enum, default_value = "alpha")]
     blend: editor_gpu::BlendMode,
@@ -55,7 +74,11 @@ struct RendererArgs {
 }
 
 impl RendererArgs {
-    fn load(self, profile: quality::RenderProfile) -> Result<editor_gpu::RenderSettings, String> {
+    fn load(
+        self,
+        profile: quality::RenderProfile,
+        msaa: u16,
+    ) -> Result<editor_gpu::RenderSettings, String> {
         let source = self
             .shader
             .map(|path| {
@@ -80,7 +103,7 @@ impl RendererArgs {
             })
             .transpose()?;
         editor_gpu::RenderSettings::new(
-            self.msaa,
+            msaa,
             self.blend,
             self.depth,
             self.cull,
@@ -114,6 +137,9 @@ struct Cli {
     /// Shorthand for `--profile preview`.
     #[arg(long, global = true)]
     preview: bool,
+    /// Multisample antialiasing: off, 2x, or 4x (numeric aliases: 1, 2, 4).
+    #[arg(long, global = true, value_enum, default_value = "4x")]
+    msaa: MsaaSetting,
     #[command(subcommand)]
     command: Commands,
 }
@@ -163,7 +189,7 @@ enum Commands {
         #[arg(short, long, default_value = "strip.ppm")]
         output: String,
     },
-    /// Render an end-exclusive range of frames to PPM files.
+    /// Render an end-exclusive frame range to PPM files or an FFmpeg MP4.
     #[command(name = "render", visible_alias = "render-range")]
     RenderRange {
         /// Path to a mogf.project JSON file.
@@ -179,6 +205,17 @@ enum Commands {
         /// Directory for frame_XXXX.ppm output files.
         #[arg(short, long)]
         output: Option<String>,
+        /// Stream rendered frames to FFmpeg and encode an H.264 MP4 without storing PPM files.
+        #[arg(long, value_name = "FILE.mp4", conflicts_with_all = ["output", "output_dir"])]
+        video: Option<String>,
+    },
+    /// Mix the selected composition's audio timeline to a stereo PCM WAV file.
+    RenderAudio {
+        /// Path to a mogf.project JSON file.
+        project: String,
+        /// Output WAV file.
+        #[arg(short, long, default_value = "renders/audio.wav")]
+        output: String,
     },
     /// List composition dimensions, frame rate, duration, and frame count.
     Timeline {
@@ -236,6 +273,7 @@ fn main() -> ExitCode {
         "strip",
         "render",
         "render-range",
+        "render-audio",
         "timeline",
         "inspect",
         "lint",
@@ -248,7 +286,7 @@ fn main() -> ExitCode {
     let mut command_position = None;
     while index < args.len() {
         let arg = args[index].to_string_lossy();
-        if arg == "--profile" || arg == "--composition-id" {
+        if arg == "--profile" || arg == "--composition-id" || arg == "--msaa" {
             index += 2;
             continue;
         }
@@ -272,6 +310,7 @@ fn main() -> ExitCode {
     } else {
         cli.profile.unwrap_or_default()
     };
+    let msaa = cli.msaa.sample_count();
     match cli.command {
         Commands::AbiCheck => run_abi_check(json),
         Commands::Sample { project, frame } => run_sample(&project, composition_id, frame, profile),
@@ -284,7 +323,15 @@ fn main() -> ExitCode {
             project,
             frames,
             output,
-        } => run_frames(&project, composition_id, &frames, &output, json, profile),
+        } => run_frames(
+            &project,
+            composition_id,
+            &frames,
+            &output,
+            json,
+            profile,
+            msaa,
+        ),
         Commands::Strip {
             project,
             count,
@@ -298,6 +345,7 @@ fn main() -> ExitCode {
             &output,
             json,
             profile,
+            msaa,
         ),
         Commands::RenderRange {
             project,
@@ -305,15 +353,21 @@ fn main() -> ExitCode {
             end_frame_exclusive,
             output_dir,
             output,
+            video,
         } => run_render_range(
             &project,
             composition_id,
             start_frame,
             end_frame_exclusive,
             output.as_deref().or(output_dir.as_deref()),
+            video.as_deref(),
             json,
             profile,
+            msaa,
         ),
+        Commands::RenderAudio { project, output } => {
+            run_render_audio(&project, composition_id, &output, json)
+        }
         Commands::Timeline { project } => run_timeline(&project, composition_id, json),
         Commands::Inspect {
             project,
@@ -328,14 +382,14 @@ fn main() -> ExitCode {
             project,
             stats,
             renderer,
-        } => match renderer.load(profile).and_then(|settings| {
+        } => match renderer.load(profile, msaa).and_then(|settings| {
             live::run(project, composition_id.map(str::to_owned), settings, stats)
         }) {
             Ok(()) => ExitCode::SUCCESS,
             Err(error) => fail(error),
         },
         Commands::Edit { project, renderer } => match renderer
-            .load(profile)
+            .load(profile, msaa)
             .and_then(|settings| editor::run(project, composition_id.map(str::to_owned), settings))
         {
             Ok(()) => ExitCode::SUCCESS,
@@ -470,14 +524,212 @@ fn run_measure_plane(
     ExitCode::SUCCESS
 }
 
+struct RenderProgress {
+    enabled: bool,
+    total: u64,
+    started: Instant,
+    finished: bool,
+}
+
+impl RenderProgress {
+    fn new(total: u64, json: bool) -> Self {
+        Self {
+            enabled: !json && io::stderr().is_terminal(),
+            total,
+            started: Instant::now(),
+            finished: false,
+        }
+    }
+
+    fn update(&self, completed: u64, frame: u64) {
+        if !self.enabled {
+            return;
+        }
+        let ratio = completed as f64 / self.total.max(1) as f64;
+        let width = 24usize;
+        let filled = (ratio * width as f64).round() as usize;
+        let bar = format!("{}{}", "█".repeat(filled), "░".repeat(width - filled));
+        let elapsed = self.started.elapsed().as_secs();
+        let eta = if completed > 0 {
+            let seconds_per_frame = elapsed as f64 / completed as f64;
+            format_duration((seconds_per_frame * (self.total - completed) as f64) as u64)
+        } else {
+            "--:--".to_owned()
+        };
+        eprint!(
+            "\rrender [{bar}] {:>4}/{:<4} {:>3}% frame {frame} elapsed {} ETA {eta}",
+            completed,
+            self.total,
+            (ratio * 100.0).round() as u32,
+            format_duration(elapsed),
+        );
+        let _ = io::stderr().flush();
+    }
+
+    fn finish(mut self) {
+        if self.enabled {
+            eprintln!();
+        }
+        self.finished = true;
+    }
+}
+
+impl Drop for RenderProgress {
+    fn drop(&mut self) {
+        if self.enabled && !self.finished {
+            eprintln!();
+        }
+    }
+}
+
+fn format_duration(seconds: u64) -> String {
+    format!("{:02}:{:02}", seconds / 60, seconds % 60)
+}
+
+struct VideoEncoder {
+    child: Child,
+    input: Option<ChildStdin>,
+    output: PathBuf,
+    finished: bool,
+}
+
+impl VideoEncoder {
+    fn spawn(
+        path: &str,
+        fps: &Rational,
+        size: [u32; 2],
+        audio_path: Option<&Path>,
+    ) -> Result<Self, String> {
+        if Path::new(path).exists() {
+            return Err(format!("video output already exists: {path}"));
+        }
+        if Path::new(path)
+            .extension()
+            .and_then(|extension| extension.to_str())
+            .is_none_or(|extension| !extension.eq_ignore_ascii_case("mp4"))
+        {
+            return Err("--video output must use the .mp4 extension".to_owned());
+        }
+        let fps = fps.as_positive()?;
+        let mut command = Command::new("ffmpeg");
+        command
+            .args([
+                "-hide_banner",
+                "-loglevel",
+                "error",
+                "-n",
+                "-f",
+                "rawvideo",
+                "-pixel_format",
+                "rgba",
+                "-video_size",
+            ])
+            .arg(format!("{}x{}", size[0], size[1]))
+            .arg("-framerate")
+            .arg(format!("{}/{}", fps.n, fps.d))
+            .args(["-i", "pipe:0"]);
+        if let Some(audio_path) = audio_path {
+            command
+                .arg("-i")
+                .arg(audio_path)
+                .args(["-map", "0:v:0", "-map", "1:a:0"]);
+        } else {
+            command.arg("-an");
+        }
+        command
+            .args(["-vf", "pad=ceil(iw/2)*2:ceil(ih/2)*2"])
+            .args([
+                "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",
+            ]);
+        if audio_path.is_some() {
+            command.args(["-c:a", "aac", "-b:a", "192k", "-shortest"]);
+        }
+        let mut child = command
+            .args(["-movflags", "+faststart"])
+            .arg(path)
+            .stdin(Stdio::piped())
+            .stdout(Stdio::null())
+            .stderr(Stdio::inherit())
+            .spawn()
+            .map_err(|error| {
+                format!(
+                    "cannot start FFmpeg: {error}; install ffmpeg with libx264 and put it on PATH"
+                )
+            })?;
+        let input = child
+            .stdin
+            .take()
+            .ok_or_else(|| "FFmpeg did not open its input pipe".to_owned())?;
+        Ok(Self {
+            child,
+            input: Some(input),
+            output: PathBuf::from(path),
+            finished: false,
+        })
+    }
+
+    fn write_frame(&mut self, ppm: &[u8]) -> Result<(), String> {
+        self.input
+            .as_mut()
+            .ok_or_else(|| "FFmpeg input pipe is closed".to_owned())?
+            .write_all(ppm)
+            .map_err(|error| format!("cannot stream frame to FFmpeg: {error}"))
+    }
+
+    fn finish(mut self) -> Result<(), String> {
+        self.input.take();
+        let status = self
+            .child
+            .wait()
+            .map_err(|error| format!("cannot wait for FFmpeg: {error}"))?;
+        if status.success() {
+            self.finished = true;
+            Ok(())
+        } else {
+            Err(format!("FFmpeg exited with {status}"))
+        }
+    }
+}
+
+struct TemporaryAudio(PathBuf);
+
+impl Drop for TemporaryAudio {
+    fn drop(&mut self) {
+        let _ = fs::remove_file(&self.0);
+    }
+}
+
+fn write_temporary_audio(samples: &[f32]) -> Result<TemporaryAudio, String> {
+    let nonce = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map_err(|error| format!("system clock is before the Unix epoch: {error}"))?
+        .as_nanos();
+    let path = std::env::temp_dir().join(format!("mogf-audio-{}-{nonce}.wav", std::process::id()));
+    audio::write_wav(&path, samples)?;
+    Ok(TemporaryAudio(path))
+}
+
+impl Drop for VideoEncoder {
+    fn drop(&mut self) {
+        if !self.finished {
+            self.input.take();
+            let _ = self.child.kill();
+            let _ = self.child.wait();
+            let _ = fs::remove_file(&self.output);
+        }
+    }
+}
+
 fn run_render_range(
     project_path: &str,
     requested_composition: Option<&str>,
     start: Option<u64>,
     end: Option<u64>,
     output: Option<&str>,
+    video: Option<&str>,
     json: bool,
     profile: quality::RenderProfile,
+    msaa: u16,
 ) -> ExitCode {
     let project = match read_project(project_path) {
         Ok(project) => project,
@@ -513,9 +765,47 @@ fn run_render_range(
     {
         return fail("MVP render dimensions exceed 4096 per side or 16,777,216 pixels");
     }
-    if let Err(error) = fs::create_dir_all(output_dir) {
-        return fail(format!("cannot create output directory: {error}"));
-    }
+    let fps = match composition.fps.as_positive() {
+        Ok(fps) => fps,
+        Err(error) => return fail(error),
+    };
+    let audio_temp = if video.is_some() && !composition.audio.is_empty() {
+        let range_start = start as f64 * fps.d as f64 / fps.n as f64;
+        let range_duration = (end - start) as f64 * fps.d as f64 / fps.n as f64;
+        let samples = match audio::mix_composition_range(
+            &project,
+            &root,
+            composition,
+            range_start,
+            range_duration,
+        ) {
+            Ok(samples) => samples,
+            Err(error) => return fail(error),
+        };
+        match write_temporary_audio(&samples) {
+            Ok(file) => Some(file),
+            Err(error) => return fail(error),
+        }
+    } else {
+        None
+    };
+    let mut encoder = if let Some(path) = video {
+        match VideoEncoder::spawn(
+            path,
+            &composition.fps,
+            composition.size,
+            audio_temp.as_ref().map(|file| file.0.as_path()),
+        ) {
+            Ok(encoder) => Some(encoder),
+            Err(error) => return fail(error),
+        }
+    } else {
+        if let Err(error) = fs::create_dir_all(output_dir) {
+            return fail(format!("cannot create output directory: {error}"));
+        }
+        None
+    };
+    let progress = RenderProgress::new(end - start, json);
     for frame_number in start..end {
         let frame = match evaluation::sample_with_profile(
             &project,
@@ -527,22 +817,108 @@ fn run_render_range(
             Ok(frame) => frame,
             Err(error) => return fail(error),
         };
-        let ppm = match gpu_export::render_ppm(&frame, composition.size) {
-            Ok(ppm) => ppm,
-            Err(error) => return fail(error),
-        };
-        let path = Path::new(output_dir).join(format!("frame_{frame_number:04}.ppm"));
-        if let Err(error) = fs::write(&path, ppm) {
-            return fail(format!("cannot write {}: {error}", path.display()));
+        if let Some(encoder) = &mut encoder {
+            let rgba = match gpu_export::render_rgba8(&frame, composition.size, msaa) {
+                Ok(rgba) => rgba,
+                Err(error) => return fail(error),
+            };
+            if let Err(error) = encoder.write_frame(&rgba) {
+                return fail(error);
+            }
+        } else {
+            let ppm = match gpu_export::render_ppm(&frame, composition.size, msaa) {
+                Ok(ppm) => ppm,
+                Err(error) => return fail(error),
+            };
+            let path = Path::new(output_dir).join(format!("frame_{frame_number:04}.ppm"));
+            if let Err(error) = fs::write(&path, ppm) {
+                return fail(format!("cannot write {}: {error}", path.display()));
+            }
+        }
+        progress.update(frame_number - start + 1, frame_number);
+    }
+    if let Some(encoder) = encoder {
+        if let Err(error) = encoder.finish() {
+            return fail(error);
         }
     }
+    progress.finish();
+    if json {
+        let output = video.unwrap_or(output_dir);
+        let format = if video.is_some() { "mp4" } else { "ppm" };
+        println!(
+            "{}",
+            serde_json::json!({"rendered": end - start, "start": start, "end_exclusive": end, "output": output, "format": format})
+        );
+    } else {
+        if let Some(video) = video {
+            println!("rendered frames {start}..{end} to {video}");
+        } else {
+            println!("rendered frames {start}..{end} to {output_dir}");
+        }
+    }
+    ExitCode::SUCCESS
+}
+
+fn run_render_audio(
+    project_path: &str,
+    requested_composition: Option<&str>,
+    output: &str,
+    json: bool,
+) -> ExitCode {
+    if Path::new(output)
+        .extension()
+        .and_then(|extension| extension.to_str())
+        .is_none_or(|extension| !extension.eq_ignore_ascii_case("wav"))
+    {
+        return fail("audio output must use the .wav extension");
+    }
+    let project = match read_project(project_path) {
+        Ok(project) => project,
+        Err(error) => return fail(error),
+    };
+    let composition_id = match select_composition(&project, requested_composition) {
+        Ok(id) => id,
+        Err(error) => return fail(error),
+    };
+    let Some(composition) = project.compositions.get(&composition_id) else {
+        return fail(format!("unknown composition {composition_id:?}"));
+    };
+    let root = project_root(project_path);
+    let samples = match audio::mix_composition(&project, &root, composition) {
+        Ok(samples) => samples,
+        Err(error) => return fail(error),
+    };
+    let output_path = Path::new(output);
+    if let Some(parent) = output_path
+        .parent()
+        .filter(|parent| !parent.as_os_str().is_empty())
+        && let Err(error) = fs::create_dir_all(parent)
+    {
+        return fail(format!("cannot create audio output directory: {error}"));
+    }
+    if let Err(error) = audio::write_wav(output_path, &samples) {
+        return fail(error);
+    }
+    let frames = samples.len() / 2;
     if json {
         println!(
             "{}",
-            serde_json::json!({"rendered": end - start, "start": start, "end_exclusive": end, "output": output_dir})
+            serde_json::json!({
+                "composition": composition_id,
+                "output": output,
+                "format": "wav",
+                "sample_rate": audio::OUTPUT_SAMPLE_RATE,
+                "channels": 2,
+                "frames": frames,
+            })
         );
     } else {
-        println!("rendered frames {start}..{end} to {output_dir}");
+        println!(
+            "rendered {} stereo frames at {} Hz to {output}",
+            frames,
+            audio::OUTPUT_SAMPLE_RATE
+        );
     }
     ExitCode::SUCCESS
 }
@@ -554,6 +930,7 @@ fn run_frames(
     output_dir: &str,
     json: bool,
     profile: quality::RenderProfile,
+    msaa: u16,
 ) -> ExitCode {
     let project = match read_project(project_path) {
         Ok(project) => project,
@@ -577,7 +954,8 @@ fn run_frames(
         return fail(format!("cannot create output directory: {error}"));
     }
     let root = project_root(project_path);
-    for &frame_number in frames {
+    let progress = RenderProgress::new(frames.len() as u64, json);
+    for (index, &frame_number) in frames.iter().enumerate() {
         let frame = match evaluation::sample_with_profile(
             &project,
             &root,
@@ -588,7 +966,7 @@ fn run_frames(
             Ok(frame) => frame,
             Err(error) => return fail(format!("frame {frame_number}: {error}")),
         };
-        let ppm = match gpu_export::render_ppm(&frame, composition.size) {
+        let ppm = match gpu_export::render_ppm(&frame, composition.size, msaa) {
             Ok(ppm) => ppm,
             Err(error) => return fail(error),
         };
@@ -596,7 +974,9 @@ fn run_frames(
         if let Err(error) = fs::write(&path, ppm) {
             return fail(format!("cannot write {}: {error}", path.display()));
         }
+        progress.update(index as u64 + 1, frame_number);
     }
+    progress.finish();
     if json {
         let files: Vec<_> = frames
             .iter()
@@ -620,6 +1000,7 @@ fn run_strip(
     output: &str,
     json: bool,
     profile: quality::RenderProfile,
+    msaa: u16,
 ) -> ExitCode {
     if count == 0 || count > 3000 || columns == 0 || columns > count {
         return fail("strip count must be 1..=3000 and columns must be 1..=count");
@@ -649,7 +1030,8 @@ fn run_strip(
     };
     let root = project_root(project_path);
     let mut rendered = Vec::with_capacity(count);
-    for frame_number in &frames {
+    let progress = RenderProgress::new(count as u64, json);
+    for (index, frame_number) in frames.iter().enumerate() {
         let frame = match evaluation::sample_with_profile(
             &project,
             &root,
@@ -660,11 +1042,13 @@ fn run_strip(
             Ok(frame) => frame,
             Err(error) => return fail(format!("frame {frame_number}: {error}")),
         };
-        match gpu_export::render_ppm(&frame, composition.size) {
+        match gpu_export::render_ppm(&frame, composition.size, msaa) {
             Ok(ppm) => rendered.push(ppm),
             Err(error) => return fail(error),
         }
+        progress.update(index as u64 + 1, *frame_number);
     }
+    progress.finish();
     let sheet = match renderer::contact_sheet_ppm(&rendered, composition.size, columns) {
         Ok(sheet) => sheet,
         Err(error) => return fail(error),
