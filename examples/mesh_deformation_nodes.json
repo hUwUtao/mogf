@@ -1,0 +1,65 @@
+{
+  "format": "mogf.project",
+  "version": 1,
+  "project_id": "mesh-deformation-nodes",
+  "requirements": [],
+  "assets": { "displace": { "uri": "glb_scene_harness/textures/HarnessChecker.png", "kind": "image", "digest": null } },
+  "states": {},
+  "compositions": {
+    "main": {
+      "size": [1280, 720],
+      "fps": { "n": "30", "d": "1" },
+      "duration": { "n": "4", "d": "1" },
+      "layers": [{ "kind": "native_3d", "data": { "root": "root", "camera": "camera", "lights": [], "transparent_sort": "authored_order", "effects": [] } }],
+      "timelines": [],
+      "clips": [],
+      "audio": [],
+      "recording": null,
+      "output_profile": "linear-premultiplied-srgb-output"
+    }
+  },
+  "objects": {
+    "root": { "name": "Root", "local": { "translation": [0, 0, 0], "rotation": [0, 0, 0, 1], "scale": [1, 1, 1] }, "body": { "kind": "group", "data": { "children": ["ripple", "cast", "camera"] } } },
+    "ripple": { "name": "Wave then twist", "local": { "translation": [-1.45, 0, 0], "rotation": [0, 0, 0, 1], "scale": [1, 1, 1] }, "body": { "kind": "draw", "data": { "batch": { "graph": "ripple", "output": "batch" } } } },
+    "cast": { "name": "Cast and smooth", "local": { "translation": [1.45, 0, -0.2], "rotation": [0.08, 0.12, 0, 0.9894], "scale": [1, 1, 1] }, "body": { "kind": "draw", "data": { "batch": { "graph": "cast", "output": "batch" } } } },
+    "camera": { "name": "Camera", "local": { "translation": [0, 0, 8], "rotation": [0, 0, 0, 1], "scale": [1, 1, 1] }, "body": { "kind": "camera", "data": { "operation": "mogf.camera.perspective", "version": 1, "inputs": {}, "params": { "fov_y": 0.7853981633974483, "near": 0.1, "far": 100 } } } }
+  },
+  "graphs": {
+    "ripple": {
+      "nodes": {
+        "plane": { "kind": "native", "data": { "operation": "mogf.geometry.plane", "version": 1, "inputs": {}, "params": { "size": [2.4, 2.4], "segments": 48 } } },
+        "wave": { "kind": "native", "data": { "operation": "mogf.deform.wave", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "plane", "port": "geometry" } } }, "params": { "amplitude": 0.14, "wavelength": 0.55, "speed": 1.4, "phase": 0.0, "decay": 0.0, "axis": "z" } } },
+        "hook": { "kind": "native", "data": { "operation": "mogf.deform.hook", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "wave", "port": "geometry" } } }, "params": { "center": [0, 0, 0], "offset": [0, 0, 0.18], "radius": 0.85, "strength": 1.0, "falloff": "smooth" } } },
+        "twist": { "kind": "native", "data": { "operation": "mogf.deform.simple", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "hook", "port": "geometry" } } }, "params": { "mode": "twist", "axis": "y", "amount": 0.3 } } },
+        "displace": { "kind": "native", "data": { "operation": "mogf.deform.displace", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "twist", "port": "geometry" } }, "texture": { "kind": "record", "data": { "table": "assets", "record": "displace" } } }, "params": { "strength": 0.08, "midlevel": 0.5, "axis": "normal" } } },
+        "curve": { "kind": "native", "data": { "operation": "mogf.deform.curve", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "displace", "port": "geometry" } } }, "params": { "points": [[-1.2, -0.55, 0], [0, 0.7, 0], [1.2, -0.55, 0]], "axis": "x", "strength": 0.65 } } },
+        "batch": { "kind": "native", "data": { "operation": "mogf.batch.explicit", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "curve", "port": "geometry" } } }, "params": { "rows": [{ "id": "rippled-plane", "placement": { "translation": [0, 0, 0], "rotation": [0, 0, 0, 1], "scale": [1, 1, 1] }, "material": "blue" }] } } }
+      },
+      "outputs": { "batch": { "node": "batch", "port": "batch" } }
+    },
+    "cast": {
+      "nodes": {
+        "box": { "kind": "native", "data": { "operation": "mogf.geometry.box", "version": 1, "inputs": {}, "params": { "size": [2.0, 2.0, 2.0], "segments": 12 } } },
+        "cast_sphere": { "kind": "native", "data": { "operation": "mogf.deform.cast", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "box", "port": "geometry" } } }, "params": { "shape": "sphere", "factor": 0.75 } } },
+        "smooth": { "kind": "native", "data": { "operation": "mogf.deform.smooth", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "cast_sphere", "port": "geometry" } } }, "params": { "factor": 0.35, "iterations": 2 } } },
+        "lattice": { "kind": "native", "data": { "operation": "mogf.deform.lattice", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "smooth", "port": "geometry" } } }, "params": { "bounds_min": [-1, -1, -1], "bounds_max": [1, 1, 1], "dimensions": [2, 2, 2], "points": [[-1, -1, -1], [1, -1, -1], [-1, 1, -1], [1, 1, -1], [-1, -1, 1.3], [1, -1, 1.3], [-1, 1, 1.3], [1, 1, 1.3]], "strength": 0.55 } } },
+        "warp": { "kind": "native", "data": { "operation": "mogf.deform.warp", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "lattice", "port": "geometry" } } }, "params": { "from": [-0.4, 0, 0], "to": [0.2, 0.3, 0], "radius": 1.8, "strength": 0.6, "falloff": "smooth" } } },
+        "batch": { "kind": "native", "data": { "operation": "mogf.batch.explicit", "version": 1, "inputs": { "geometry": { "kind": "node", "data": { "node": "warp", "port": "geometry" } } }, "params": { "rows": [{ "id": "rounded-box", "placement": { "translation": [0, 0, 0], "rotation": [0, 0, 0, 1], "scale": [1, 1, 1] }, "material": "orange" }] } } }
+      },
+      "outputs": { "batch": { "node": "batch", "port": "batch" } }
+    }
+  },
+  "functions": {},
+  "materials": {
+    "blue": { "operation": "mogf.material.principled", "version": 1, "inputs": {}, "params": { "color": [0.1, 0.35, 0.95, 1], "roughness": 0.42 } },
+    "orange": { "operation": "mogf.material.principled", "version": 1, "inputs": {}, "params": { "color": [1.0, 0.32, 0.08, 1], "roughness": 0.38 } }
+  },
+  "shaders": {},
+  "timelines": {},
+  "clips": {},
+  "media": {},
+  "effects": {},
+  "recordings": {},
+  "bakes": {},
+  "metadata": {}
+}

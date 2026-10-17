@@ -14,6 +14,7 @@ use clap::{Args, Parser, Subcommand};
 mod animation;
 mod audio;
 mod camera;
+mod deformation;
 mod editor;
 mod editor_gpu;
 mod evaluation;
