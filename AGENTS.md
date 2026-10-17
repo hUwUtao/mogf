@@ -21,6 +21,8 @@ The proposal CLI uses the local store at `agentic/agents/paperwork/proposals`; s
 
 - Prefix Linux terminal commands with `rtk`; prefer `rg` and `rg --files`.
 - Keep changes scoped and preserve unrelated staged or unstaged work.
+- Do not generate, append, rewrite, or otherwise edit `README.md` or any README-named file unless the user explicitly requests that README change and specifies its content or scope. General requests to implement, document, or clean up work do not grant this permission.
+- Do not create new README files for files, folders, examples, assets, or features. Only an explicit user instruction requesting that README and its content or scope lifts this prohibition.
 - Use `rtk cargo build` for binary/link verification. Do not claim a build from `cargo check` alone.
 - Do not add tests unless requested; use focused runtime checks where suitable.
 - Document only current behavior in shipped files. Keep research and historical proposal claims in `agentic/`.
