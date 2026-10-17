@@ -218,6 +218,25 @@ pub(super) struct Composition {
     pub(super) audio_buses: BTreeMap<String, AudioBus>,
     pub(super) recording: Option<String>,
     pub(super) output_profile: String,
+    #[serde(default)]
+    pub(super) physics: Option<PhysicsWorld>,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub(super) struct PhysicsWorld {
+    #[serde(default = "default_gravity")]
+    pub(super) gravity: [f32; 3],
+    #[serde(default = "default_physics_rate")]
+    pub(super) step_hz: u32,
+    pub(super) bodies: Vec<super::physics::RigidBodySpec>,
+}
+
+fn default_gravity() -> [f32; 3] {
+    [0.0, -9.81, 0.0]
+}
+fn default_physics_rate() -> u32 {
+    120
 }
 
 /// Audio can be authored as a legacy asset ID or as a scheduled timeline clip.

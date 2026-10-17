@@ -95,6 +95,7 @@ struct EditorApp {
     last_poll: Instant,
     last_reload: Instant,
     preview_gpu: Option<Arc<editor_gpu::SceneFrame>>,
+    physics: Option<crate::physics::PhysicsWorker>,
     gpu_format: Option<eframe::wgpu::TextureFormat>,
     render_settings: Arc<editor_gpu::RenderSettings>,
     preview_size: [u32; 2],
@@ -128,6 +129,7 @@ impl EditorApp {
             last_poll: Instant::now() - Duration::from_secs(1),
             last_reload: Instant::now() - Duration::from_secs(1),
             preview_gpu: None,
+            physics: None,
             gpu_format,
             render_settings,
             preview_size: [960, 540],
@@ -213,6 +215,33 @@ impl EditorApp {
             })
             .unwrap_or(0);
         let next_root = project_root(&self.project_path.to_string_lossy());
+        let next_physics = next_composition
+            .as_ref()
+            .and_then(|id| {
+                next.compositions
+                    .get(id)
+                    .and_then(|composition| composition.physics.as_ref())
+                    .map(|world| (id, world))
+            })
+            .map(|(id, world)| {
+                evaluation::sample_with_profile(
+                    &next,
+                    &next_root,
+                    id,
+                    0,
+                    self.render_settings.profile,
+                )
+                .and_then(|frame| crate::physics::PhysicsWorker::new(world, &frame))
+            })
+            .transpose();
+        let next_physics = match next_physics {
+            Ok(worker) => worker,
+            Err(error) => {
+                self.error = Some(error);
+                self.status = "Simulation setup failed; previous scene retained".into();
+                return;
+            }
+        };
         let (next_snapshot, next_preview, next_preview_size) = if let Some(composition_id) =
             &next_composition
         {
@@ -302,6 +331,7 @@ impl EditorApp {
             self.status = "Project ready".into();
         }
         self.project_json = Some(next_json);
+        self.physics = next_physics;
         self.source_files = next_sources;
         self.composition_id = next_composition;
         self.frame = next_frame;
@@ -371,7 +401,7 @@ impl EditorApp {
             .current_composition()
             .map(|composition| composition.size)
             .unwrap_or([16, 9]);
-        let frame = match evaluation::sample_with_profile(
+        let mut frame = match evaluation::sample_with_profile(
             project,
             &root,
             composition_id,
@@ -385,6 +415,36 @@ impl EditorApp {
                 return;
             }
         };
+        let composition = self.project.as_ref().and_then(|project| {
+            self.composition_id
+                .as_ref()
+                .and_then(|id| project.compositions.get(id))
+        });
+        if let (Some(composition), Some(worker)) = (composition, self.physics.as_mut()) {
+            if let Some(world) = &composition.physics {
+                match crate::physics::tick_for_frame(self.frame, &composition.fps, world.step_hz) {
+                    Ok(tick) => {
+                        worker.request_tick(tick);
+                        match worker.poll() {
+                            Ok(Some(sample)) => {
+                                crate::physics::apply_sample(&mut frame, sample, world);
+                                self.status = if sample.tick < tick {
+                                    format!(
+                                        "Physics catching up: showing {:.3}s",
+                                        sample.time_seconds
+                                    )
+                                } else {
+                                    format!("Physics ready: {:.3}s", sample.time_seconds)
+                                };
+                            }
+                            Ok(None) => {}
+                            Err(error) => self.error = Some(error),
+                        }
+                    }
+                    Err(error) => self.error = Some(error),
+                }
+            }
+        }
         if let Some(target_format) = self.gpu_format {
             let aspect = composition_size[0] as f32 / composition_size[1].max(1) as f32;
             match editor_gpu::build_frame(&frame, aspect, target_format) {

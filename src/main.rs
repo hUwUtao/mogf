@@ -24,6 +24,7 @@ mod graph;
 mod imports;
 mod live;
 mod model;
+mod physics;
 mod quality;
 mod renderer;
 mod scene_asset;

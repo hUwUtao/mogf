@@ -22,3 +22,9 @@ The issue here are the solutions:
 ## Whats the solution does it solve?
 
 As far as I observed "just do it" result. LLM performs badly and repetitively. Mind that it cannot do actual work from start to end. A long steering is generally wanted.
+
+## Rigid-body preview
+
+Project format v2 compositions may define a `physics` world with gravity, `step_hz`, and rigid bodies keyed by scene object ID. Current preview bodies support ball, cuboid, and Y-capsule colliders with dynamic, fixed, or kinematic modes. In `mogf edit` and `mogf live`, physics runs on a worker thread; an uncached frame advances the session and the preview shows the latest completed simulation time while it catches up.
+
+Open `examples/physics_preview.json` with `mogf edit` to see a ball fall onto a fixed floor. The preview cache is currently in memory for that session; persistent baking and final-render simulation playback are not implemented yet. The project `sample` and `render` commands continue to evaluate authored scene animation without simulating physics.

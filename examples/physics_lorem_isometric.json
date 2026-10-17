@@ -1,0 +1,1574 @@
+{
+  "format": "mogf.project",
+  "version": 2,
+  "project_id": "physics-lorem-isometric",
+  "requirements": [],
+  "assets": {
+    "font.main": {
+      "uri": "assets/fonts/NotoSans-Regular.ttf",
+      "kind": "font",
+      "digest": null
+    },
+    "font.bold": {
+      "uri": "assets/fonts/DejaVuSansCondensed-Bold.ttf",
+      "kind": "font",
+      "digest": null
+    }
+  },
+  "states": {},
+  "compositions": {
+    "main": {
+      "size": [
+        1600,
+        900
+      ],
+      "fps": {
+        "n": "30",
+        "d": "1"
+      },
+      "duration": {
+        "n": "8",
+        "d": "1"
+      },
+      "layers": [
+        {
+          "kind": "native_3d",
+          "data": {
+            "root": "root",
+            "camera": "camera",
+            "lights": [],
+            "transparent_sort": "authored_order",
+            "effects": []
+          }
+        }
+      ],
+      "timelines": [],
+      "clips": [],
+      "audio": [],
+      "recording": null,
+      "output_profile": "linear-premultiplied-srgb-output",
+      "physics": {
+        "gravity": [
+          0,
+          -9.81,
+          0
+        ],
+        "step_hz": 120,
+        "bodies": [
+          {
+            "id": "ground",
+            "mode": "fixed",
+            "pose": {
+              "translation": [
+                0,
+                -0.2,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0,
+                1
+              ]
+            },
+            "shape": {
+              "kind": "cuboid",
+              "half_extents": [
+                24,
+                0.2,
+                16
+              ]
+            }
+          },
+          {
+            "id": "lorem",
+            "mode": "dynamic",
+            "per_instance": true,
+            "pose": {
+              "translation": [
+                0,
+                25,
+                6.5
+              ],
+              "rotation": [
+                0.77714596,
+                0.0,
+                0.0,
+                0.62932039
+              ]
+            },
+            "shape": {
+              "kind": "cuboid",
+              "half_extents": [
+                7,
+                4.5,
+                0.08
+              ]
+            },
+            "mass": 0.06,
+            "friction": 0.55,
+            "restitution": 0.14,
+            "linear_velocity": [
+              0.0,
+              -0.8,
+              0.0
+            ],
+            "linear_velocity_spread": [
+              0.22,
+              0.16,
+              0.22
+            ],
+            "angular_velocity_spread": [
+              0.32,
+              0.32,
+              0.32
+            ],
+            "seed": 914027,
+            "ccd": true
+          },
+          {
+            "id": "glyph-l",
+            "mode": "fixed",
+            "pose": {
+              "translation": [
+                -14,
+                0.25,
+                -6
+              ],
+              "rotation": [
+                0.70710678,
+                0,
+                0,
+                0.70710678
+              ]
+            },
+            "shape": {
+              "kind": "cuboid",
+              "half_extents": [
+                5.4,
+                9,
+                0.25
+              ]
+            }
+          },
+          {
+            "id": "glyph-o",
+            "mode": "fixed",
+            "pose": {
+              "translation": [
+                14,
+                0.25,
+                -6
+              ],
+              "rotation": [
+                0.70710678,
+                0,
+                0,
+                0.70710678
+              ]
+            },
+            "shape": {
+              "kind": "cuboid",
+              "half_extents": [
+                6,
+                9,
+                0.25
+              ]
+            }
+          },
+          {
+            "id": "sky-glyph",
+            "mode": "fixed",
+            "pose": {
+              "translation": [
+                8,
+                14,
+                5
+              ],
+              "rotation": [
+                0,
+                0,
+                0,
+                1
+              ]
+            },
+            "shape": {
+              "kind": "cuboid",
+              "half_extents": [
+                0.7,
+                0.9,
+                0.12
+              ]
+            }
+          },
+          {
+            "id": "glyph-g",
+            "mode": "fixed",
+            "pose": {
+              "translation": [
+                0,
+                0.25,
+                -6
+              ],
+              "rotation": [
+                0.70710678,
+                0,
+                0,
+                0.70710678
+              ]
+            },
+            "shape": {
+              "kind": "cuboid",
+              "half_extents": [
+                6,
+                9,
+                0.25
+              ]
+            }
+          },
+          {
+            "id": "ground-caption",
+            "mode": "fixed",
+            "pose": {
+              "translation": [
+                0,
+                0.03,
+                9
+              ],
+              "rotation": [
+                0.70710678,
+                0.0,
+                0.0,
+                0.70710678
+              ]
+            },
+            "shape": {
+              "kind": "cuboid",
+              "half_extents": [
+                7,
+                0.9,
+                0.03
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "objects": {
+    "root": {
+      "name": "Isometric physics harness",
+      "local": {
+        "translation": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "group",
+        "data": {
+          "children": [
+            "ground",
+            "lorem",
+            "glyph-l",
+            "glyph-o",
+            "sky-glyph",
+            "glyph-g",
+            "ground-caption",
+            "camera"
+          ]
+        }
+      }
+    },
+    "ground": {
+      "name": "Ground plane",
+      "local": {
+        "translation": [
+          0,
+          -0.2,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          48,
+          0.4,
+          32
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "ground",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "lorem": {
+      "name": "Flat falling Lorem Ipsum text sheet",
+      "local": {
+        "translation": [
+          0,
+          25,
+          6.5
+        ],
+        "rotation": [
+          0.77714596,
+          0.0,
+          0.0,
+          0.62932039
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "lorem",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "glyph-l": {
+      "name": "18 m thick ground glyph (six-floor scale)",
+      "local": {
+        "translation": [
+          -14,
+          0.5,
+          -6
+        ],
+        "rotation": [
+          0.70710678,
+          0,
+          0,
+          0.70710678
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "giant-l",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "glyph-o": {
+      "name": "18 m thick ground glyph (six-floor scale)",
+      "local": {
+        "translation": [
+          14,
+          0.5,
+          -6
+        ],
+        "rotation": [
+          0.70710678,
+          0,
+          0,
+          0.70710678
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "giant-o",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "sky-glyph": {
+      "name": "Human-height sky glyph (1.8 m)",
+      "local": {
+        "translation": [
+          8,
+          14,
+          5
+        ],
+        "rotation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "human-a",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "camera": {
+      "name": "Isometric camera",
+      "local": {
+        "translation": [
+          -34.71,
+          66.5,
+          74.44
+        ],
+        "rotation": [
+          -0.2935778714,
+          -0.2064221286,
+          -0.0650846472,
+          0.9311100509
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "camera",
+        "data": {
+          "operation": "mogf.camera.perspective",
+          "version": 1,
+          "inputs": {},
+          "params": {
+            "fov_y": 0.5,
+            "near": 0.1,
+            "far": 300
+          }
+        }
+      }
+    },
+    "glyph-g": {
+      "name": "18 m thick ground glyph (six-floor scale)",
+      "local": {
+        "translation": [
+          0,
+          0.5,
+          -6
+        ],
+        "rotation": [
+          0.70710678,
+          0,
+          0,
+          0.70710678
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "giant-g",
+            "output": "batch"
+          }
+        }
+      }
+    },
+    "ground-caption": {
+      "name": "Dense bold ground caption",
+      "local": {
+        "translation": [
+          0,
+          0.06,
+          9
+        ],
+        "rotation": [
+          0.70710678,
+          0.0,
+          0.0,
+          0.70710678
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "body": {
+        "kind": "draw",
+        "data": {
+          "batch": {
+            "graph": "ground-caption",
+            "output": "batch"
+          }
+        }
+      }
+    }
+  },
+  "graphs": {
+    "ground": {
+      "nodes": {
+        "shape": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.geometry.box",
+            "version": 1,
+            "inputs": {},
+            "params": {
+              "size": [
+                1,
+                1,
+                1
+              ]
+            }
+          }
+        },
+        "instances": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.batch.explicit",
+            "version": 1,
+            "inputs": {
+              "geometry": {
+                "kind": "node",
+                "data": {
+                  "node": "shape",
+                  "port": "geometry"
+                }
+              }
+            },
+            "params": {
+              "rows": [
+                {
+                  "id": "ground",
+                  "placement": {
+                    "translation": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "rotation": [
+                      0,
+                      0,
+                      0,
+                      1
+                    ],
+                    "scale": [
+                      1,
+                      1,
+                      1
+                    ]
+                  },
+                  "material": "ground-mat"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "instances",
+          "port": "batch"
+        }
+      }
+    },
+    "lorem": {
+      "nodes": {
+        "text": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.main"
+                }
+              }
+            },
+            "params": {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, et fringilla turpis nunc eget lorem. Donec quis dui at dolor tempor interdum. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
+              "size": 0.58,
+              "material": "paragraph-mat",
+              "tolerance": 0.16,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.08,
+              "max_width": 14,
+              "token_ids": [
+                "para-0",
+                "para-1",
+                "para-2",
+                "para-3",
+                "para-4",
+                "para-5",
+                "para-6",
+                "para-7",
+                "para-8",
+                "para-9",
+                "para-10",
+                "para-11",
+                "para-12",
+                "para-13",
+                "para-14",
+                "para-15",
+                "para-16",
+                "para-17",
+                "para-18",
+                "para-19",
+                "para-20",
+                "para-21",
+                "para-22",
+                "para-23",
+                "para-24",
+                "para-25",
+                "para-26",
+                "para-27",
+                "para-28",
+                "para-29",
+                "para-30",
+                "para-31",
+                "para-32",
+                "para-33",
+                "para-34",
+                "para-35",
+                "para-36",
+                "para-37",
+                "para-38",
+                "para-39",
+                "para-40",
+                "para-41",
+                "para-42",
+                "para-43",
+                "para-44",
+                "para-45",
+                "para-46",
+                "para-47",
+                "para-48",
+                "para-49",
+                "para-50",
+                "para-51",
+                "para-52",
+                "para-53",
+                "para-54",
+                "para-55",
+                "para-56",
+                "para-57",
+                "para-58",
+                "para-59",
+                "para-60",
+                "para-61",
+                "para-62",
+                "para-63",
+                "para-64",
+                "para-65",
+                "para-66",
+                "para-67",
+                "para-68",
+                "para-69",
+                "para-70",
+                "para-71",
+                "para-72",
+                "para-73",
+                "para-74",
+                "para-75",
+                "para-76",
+                "para-77",
+                "para-78",
+                "para-79",
+                "para-80",
+                "para-81",
+                "para-82",
+                "para-83",
+                "para-84",
+                "para-85",
+                "para-86",
+                "para-87",
+                "para-88",
+                "para-89",
+                "para-90",
+                "para-91",
+                "para-92",
+                "para-93",
+                "para-94",
+                "para-95",
+                "para-96",
+                "para-97",
+                "para-98",
+                "para-99",
+                "para-100",
+                "para-101",
+                "para-102",
+                "para-103",
+                "para-104",
+                "para-105",
+                "para-106",
+                "para-107",
+                "para-108",
+                "para-109",
+                "para-110",
+                "para-111",
+                "para-112",
+                "para-113",
+                "para-114",
+                "para-115",
+                "para-116",
+                "para-117",
+                "para-118",
+                "para-119",
+                "para-120",
+                "para-121",
+                "para-122",
+                "para-123",
+                "para-124",
+                "para-125",
+                "para-126",
+                "para-127",
+                "para-128",
+                "para-129",
+                "para-130",
+                "para-131",
+                "para-132",
+                "para-133",
+                "para-134",
+                "para-135",
+                "para-136",
+                "para-137",
+                "para-138",
+                "para-139",
+                "para-140",
+                "para-141",
+                "para-142",
+                "para-143",
+                "para-144",
+                "para-145",
+                "para-146",
+                "para-147",
+                "para-148",
+                "para-149",
+                "para-150",
+                "para-151",
+                "para-152",
+                "para-153",
+                "para-154",
+                "para-155",
+                "para-156",
+                "para-157",
+                "para-158",
+                "para-159",
+                "para-160",
+                "para-161",
+                "para-162",
+                "para-163",
+                "para-164",
+                "para-165",
+                "para-166",
+                "para-167",
+                "para-168",
+                "para-169",
+                "para-170",
+                "para-171",
+                "para-172",
+                "para-173",
+                "para-174",
+                "para-175",
+                "para-176",
+                "para-177",
+                "para-178",
+                "para-179",
+                "para-180",
+                "para-181",
+                "para-182",
+                "para-183",
+                "para-184",
+                "para-185",
+                "para-186",
+                "para-187",
+                "para-188",
+                "para-189",
+                "para-190",
+                "para-191",
+                "para-192",
+                "para-193",
+                "para-194",
+                "para-195",
+                "para-196",
+                "para-197",
+                "para-198",
+                "para-199",
+                "para-200",
+                "para-201",
+                "para-202",
+                "para-203",
+                "para-204",
+                "para-205",
+                "para-206",
+                "para-207",
+                "para-208",
+                "para-209",
+                "para-210",
+                "para-211",
+                "para-212",
+                "para-213",
+                "para-214",
+                "para-215",
+                "para-216",
+                "para-217",
+                "para-218",
+                "para-219",
+                "para-220",
+                "para-221",
+                "para-222",
+                "para-223",
+                "para-224",
+                "para-225",
+                "para-226",
+                "para-227",
+                "para-228",
+                "para-229",
+                "para-230",
+                "para-231",
+                "para-232",
+                "para-233",
+                "para-234",
+                "para-235",
+                "para-236",
+                "para-237",
+                "para-238",
+                "para-239",
+                "para-240",
+                "para-241",
+                "para-242",
+                "para-243",
+                "para-244",
+                "para-245",
+                "para-246",
+                "para-247",
+                "para-248",
+                "para-249",
+                "para-250",
+                "para-251",
+                "para-252",
+                "para-253",
+                "para-254",
+                "para-255",
+                "para-256",
+                "para-257",
+                "para-258",
+                "para-259",
+                "para-260",
+                "para-261",
+                "para-262",
+                "para-263",
+                "para-264",
+                "para-265",
+                "para-266",
+                "para-267",
+                "para-268",
+                "para-269",
+                "para-270",
+                "para-271",
+                "para-272",
+                "para-273",
+                "para-274",
+                "para-275",
+                "para-276",
+                "para-277",
+                "para-278",
+                "para-279",
+                "para-280",
+                "para-281",
+                "para-282",
+                "para-283",
+                "para-284",
+                "para-285",
+                "para-286",
+                "para-287",
+                "para-288",
+                "para-289",
+                "para-290",
+                "para-291",
+                "para-292",
+                "para-293",
+                "para-294",
+                "para-295",
+                "para-296",
+                "para-297",
+                "para-298",
+                "para-299",
+                "para-300",
+                "para-301",
+                "para-302",
+                "para-303",
+                "para-304",
+                "para-305",
+                "para-306",
+                "para-307",
+                "para-308",
+                "para-309",
+                "para-310",
+                "para-311",
+                "para-312",
+                "para-313",
+                "para-314",
+                "para-315",
+                "para-316",
+                "para-317",
+                "para-318",
+                "para-319",
+                "para-320",
+                "para-321",
+                "para-322",
+                "para-323",
+                "para-324",
+                "para-325",
+                "para-326",
+                "para-327",
+                "para-328",
+                "para-329",
+                "para-330",
+                "para-331",
+                "para-332",
+                "para-333",
+                "para-334",
+                "para-335",
+                "para-336",
+                "para-337",
+                "para-338",
+                "para-339",
+                "para-340",
+                "para-341",
+                "para-342",
+                "para-343",
+                "para-344",
+                "para-345",
+                "para-346",
+                "para-347",
+                "para-348",
+                "para-349",
+                "para-350",
+                "para-351",
+                "para-352",
+                "para-353",
+                "para-354",
+                "para-355",
+                "para-356",
+                "para-357",
+                "para-358",
+                "para-359",
+                "para-360",
+                "para-361",
+                "para-362",
+                "para-363",
+                "para-364",
+                "para-365",
+                "para-366",
+                "para-367",
+                "para-368",
+                "para-369",
+                "para-370",
+                "para-371",
+                "para-372",
+                "para-373",
+                "para-374",
+                "para-375",
+                "para-376",
+                "para-377",
+                "para-378",
+                "para-379",
+                "para-380",
+                "para-381",
+                "para-382",
+                "para-383",
+                "para-384",
+                "para-385",
+                "para-386",
+                "para-387",
+                "para-388",
+                "para-389",
+                "para-390",
+                "para-391",
+                "para-392",
+                "para-393",
+                "para-394",
+                "para-395",
+                "para-396",
+                "para-397",
+                "para-398",
+                "para-399",
+                "para-400",
+                "para-401",
+                "para-402",
+                "para-403",
+                "para-404",
+                "para-405",
+                "para-406",
+                "para-407",
+                "para-408",
+                "para-409",
+                "para-410",
+                "para-411",
+                "para-412",
+                "para-413",
+                "para-414",
+                "para-415",
+                "para-416",
+                "para-417",
+                "para-418",
+                "para-419",
+                "para-420",
+                "para-421",
+                "para-422",
+                "para-423",
+                "para-424",
+                "para-425",
+                "para-426",
+                "para-427",
+                "para-428",
+                "para-429",
+                "para-430",
+                "para-431",
+                "para-432",
+                "para-433",
+                "para-434",
+                "para-435",
+                "para-436",
+                "para-437",
+                "para-438",
+                "para-439",
+                "para-440",
+                "para-441",
+                "para-442",
+                "para-443",
+                "para-444",
+                "para-445",
+                "para-446",
+                "para-447",
+                "para-448",
+                "para-449",
+                "para-450",
+                "para-451",
+                "para-452",
+                "para-453",
+                "para-454",
+                "para-455",
+                "para-456",
+                "para-457",
+                "para-458",
+                "para-459",
+                "para-460",
+                "para-461",
+                "para-462",
+                "para-463",
+                "para-464",
+                "para-465",
+                "para-466",
+                "para-467",
+                "para-468",
+                "para-469",
+                "para-470",
+                "para-471",
+                "para-472",
+                "para-473",
+                "para-474",
+                "para-475",
+                "para-476",
+                "para-477",
+                "para-478",
+                "para-479",
+                "para-480",
+                "para-481",
+                "para-482",
+                "para-483",
+                "para-484",
+                "para-485",
+                "para-486",
+                "para-487",
+                "para-488",
+                "para-489",
+                "para-490",
+                "para-491",
+                "para-492",
+                "para-493",
+                "para-494",
+                "para-495",
+                "para-496",
+                "para-497",
+                "para-498",
+                "para-499",
+                "para-500",
+                "para-501",
+                "para-502",
+                "para-503",
+                "para-504",
+                "para-505",
+                "para-506",
+                "para-507",
+                "para-508",
+                "para-509",
+                "para-510",
+                "para-511",
+                "para-512",
+                "para-513",
+                "para-514",
+                "para-515",
+                "para-516",
+                "para-517",
+                "para-518",
+                "para-519",
+                "para-520",
+                "para-521",
+                "para-522",
+                "para-523",
+                "para-524",
+                "para-525",
+                "para-526",
+                "para-527",
+                "para-528",
+                "para-529",
+                "para-530",
+                "para-531",
+                "para-532",
+                "para-533",
+                "para-534",
+                "para-535",
+                "para-536",
+                "para-537",
+                "para-538",
+                "para-539",
+                "para-540",
+                "para-541",
+                "para-542",
+                "para-543",
+                "para-544",
+                "para-545",
+                "para-546",
+                "para-547",
+                "para-548",
+                "para-549",
+                "para-550",
+                "para-551",
+                "para-552",
+                "para-553",
+                "para-554",
+                "para-555",
+                "para-556",
+                "para-557",
+                "para-558",
+                "para-559",
+                "para-560",
+                "para-561",
+                "para-562",
+                "para-563",
+                "para-564",
+                "para-565",
+                "para-566",
+                "para-567",
+                "para-568",
+                "para-569",
+                "para-570",
+                "para-571",
+                "para-572",
+                "para-573",
+                "para-574",
+                "para-575",
+                "para-576",
+                "para-577",
+                "para-578",
+                "para-579",
+                "para-580",
+                "para-581",
+                "para-582",
+                "para-583",
+                "para-584",
+                "para-585",
+                "para-586",
+                "para-587",
+                "para-588",
+                "para-589",
+                "para-590",
+                "para-591",
+                "para-592",
+                "para-593",
+                "para-594",
+                "para-595",
+                "para-596",
+                "para-597",
+                "para-598",
+                "para-599",
+                "para-600",
+                "para-601",
+                "para-602",
+                "para-603",
+                "para-604",
+                "para-605",
+                "para-606",
+                "para-607",
+                "para-608",
+                "para-609",
+                "para-610",
+                "para-611",
+                "para-612",
+                "para-613",
+                "para-614",
+                "para-615",
+                "para-616",
+                "para-617",
+                "para-618",
+                "para-619",
+                "para-620",
+                "para-621",
+                "para-622",
+                "para-623",
+                "para-624",
+                "para-625",
+                "para-626",
+                "para-627",
+                "para-628",
+                "para-629",
+                "para-630",
+                "para-631",
+                "para-632",
+                "para-633",
+                "para-634",
+                "para-635",
+                "para-636",
+                "para-637",
+                "para-638",
+                "para-639",
+                "para-640",
+                "para-641",
+                "para-642",
+                "para-643",
+                "para-644",
+                "para-645",
+                "para-646",
+                "para-647",
+                "para-648"
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "text",
+          "port": "batch"
+        }
+      }
+    },
+    "giant-l": {
+      "nodes": {
+        "text": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.bold"
+                }
+              }
+            },
+            "params": {
+              "text": "L",
+              "size": 18,
+              "material": "giant-mat",
+              "tolerance": 0.2,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.5,
+              "token_ids": [
+                "ground-glyph-l"
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "text",
+          "port": "batch"
+        }
+      }
+    },
+    "giant-o": {
+      "nodes": {
+        "text": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.bold"
+                }
+              }
+            },
+            "params": {
+              "text": "O",
+              "size": 18,
+              "material": "giant-mat",
+              "tolerance": 0.2,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.5,
+              "token_ids": [
+                "ground-glyph-o"
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "text",
+          "port": "batch"
+        }
+      }
+    },
+    "human-a": {
+      "nodes": {
+        "text": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.main"
+                }
+              }
+            },
+            "params": {
+              "text": "a",
+              "size": 1.8,
+              "material": "human-mat",
+              "tolerance": 0.12,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.12,
+              "token_ids": [
+                "glyph-0"
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "text",
+          "port": "batch"
+        }
+      }
+    },
+    "giant-g": {
+      "nodes": {
+        "text": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.bold"
+                }
+              }
+            },
+            "params": {
+              "text": "G",
+              "size": 18,
+              "material": "giant-mat",
+              "tolerance": 0.2,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.5,
+              "token_ids": [
+                "ground-glyph-g"
+              ]
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "text",
+          "port": "batch"
+        }
+      }
+    },
+    "ground-caption": {
+      "nodes": {
+        "text": {
+          "kind": "native",
+          "data": {
+            "operation": "mogf.text.shaped",
+            "version": 1,
+            "inputs": {
+              "font": {
+                "kind": "record",
+                "data": {
+                  "table": "assets",
+                  "record": "font.bold"
+                }
+              }
+            },
+            "params": {
+              "text": "MOGF  /  PHYSICS  /  TYPE",
+              "size": 1.45,
+              "token_ids": [
+                "caption-0",
+                "caption-1",
+                "caption-2",
+                "caption-3",
+                "caption-4",
+                "caption-5",
+                "caption-6",
+                "caption-7",
+                "caption-8",
+                "caption-9",
+                "caption-10",
+                "caption-11",
+                "caption-12",
+                "caption-13",
+                "caption-14",
+                "caption-15",
+                "caption-16",
+                "caption-17",
+                "caption-18",
+                "caption-19",
+                "caption-20",
+                "caption-21",
+                "caption-22",
+                "caption-23",
+                "caption-24"
+              ],
+              "material": "giant-mat",
+              "tolerance": 0.16,
+              "quantization": 0.001,
+              "fill_rule": "nonzero",
+              "extrusion_depth": 0.06,
+              "max_width": 14
+            }
+          }
+        }
+      },
+      "outputs": {
+        "batch": {
+          "node": "text",
+          "port": "batch"
+        }
+      }
+    }
+  },
+  "functions": {},
+  "materials": {
+    "ground-mat": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0.16,
+          0.19,
+          0.23,
+          1
+        ]
+      }
+    },
+    "paragraph-mat": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0.98,
+          0.68,
+          0.25,
+          1
+        ]
+      }
+    },
+    "giant-mat": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0.22,
+          0.65,
+          0.82,
+          1
+        ]
+      }
+    },
+    "human-mat": {
+      "operation": "mogf.material.unlit",
+      "version": 1,
+      "inputs": {},
+      "params": {
+        "color": [
+          0.94,
+          0.34,
+          0.32,
+          1
+        ]
+      }
+    }
+  },
+  "shaders": {},
+  "timelines": {},
+  "clips": {},
+  "media": {},
+  "effects": {},
+  "recordings": {},
+  "bakes": {},
+  "metadata": {}
+}

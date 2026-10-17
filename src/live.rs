@@ -89,6 +89,7 @@ struct LiveApp {
     render_settings: Arc<editor_gpu::RenderSettings>,
     emit_stats: bool,
     preview_gpu: Option<Arc<editor_gpu::SceneFrame>>,
+    physics: Option<crate::physics::PhysicsWorker>,
     last_reload: Instant,
     last_poll: Instant,
     last_tick: Instant,
@@ -124,6 +125,7 @@ impl LiveApp {
             render_settings,
             emit_stats,
             preview_gpu: None,
+            physics: None,
             last_reload: Instant::now() - Duration::from_secs(1),
             last_poll: Instant::now() - Duration::from_millis(300),
             last_tick: Instant::now(),
@@ -183,6 +185,28 @@ impl LiveApp {
             }
         };
         let root = project_root(&self.project_path.to_string_lossy());
+        let next_physics = next
+            .compositions
+            .get(&self.composition_id)
+            .and_then(|composition| composition.physics.as_ref())
+            .map(|world| {
+                evaluation::sample_with_profile(
+                    &next,
+                    &root,
+                    &self.composition_id,
+                    0,
+                    self.render_settings.profile,
+                )
+                .and_then(|frame| crate::physics::PhysicsWorker::new(world, &frame))
+            })
+            .transpose();
+        let next_physics = match next_physics {
+            Ok(worker) => worker,
+            Err(error) => {
+                self.show_error(ctx, error);
+                return true;
+            }
+        };
         let candidate_audio =
             match crate::audio::CompositionAudio::load(&next, &root, &self.composition_id) {
                 Ok(mut audio) => {
@@ -215,6 +239,7 @@ impl LiveApp {
             self.project = Some(next);
             Vec::new()
         };
+        self.physics = next_physics;
         self.preview_gpu = Some(candidate_preview);
         self.audio = candidate_audio;
         self.project_json = Some(next_json);
@@ -389,7 +414,7 @@ impl LiveApp {
             .ok_or("live renderer did not receive a wgpu surface")?;
         let root = project_root(&self.project_path.to_string_lossy());
         let sample_started = Instant::now();
-        let frame = evaluation::sample_with_profile(
+        let mut frame = evaluation::sample_with_profile(
             project,
             &root,
             &self.composition_id,
@@ -401,6 +426,18 @@ impl LiveApp {
             .compositions
             .get(&self.composition_id)
             .ok_or_else(|| format!("missing composition {:?}", self.composition_id))?;
+        if let (Some(world), Some(worker)) = (&composition.physics, self.physics.as_mut()) {
+            let tick = crate::physics::tick_for_frame(self.frame, &composition.fps, world.step_hz)?;
+            worker.request_tick(tick);
+            if let Some(sample) = worker.poll()? {
+                crate::physics::apply_sample(&mut frame, sample, world);
+                self.status = if sample.tick < tick {
+                    format!("physics catching up: showing {:.3}s", sample.time_seconds)
+                } else {
+                    format!("physics ready: {:.3}s", sample.time_seconds)
+                };
+            }
+        }
         let aspect = composition.size[0] as f32 / composition.size[1].max(1) as f32;
         let scene_started = Instant::now();
         self.preview_gpu = Some(Arc::new(editor_gpu::build_frame(

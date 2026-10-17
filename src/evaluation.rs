@@ -25,8 +25,8 @@ pub(super) fn sample_with_profile<'a>(
     profile: quality::RenderProfile,
 ) -> Result<Frame<'a>, String> {
     require(
-        project.format == "mogf.project" && project.version == 1,
-        "only mogf.project version 1 is supported",
+        project.format == "mogf.project" && (1..=2).contains(&project.version),
+        "only mogf.project versions 1 and 2 are supported",
     )?;
     // The MVP rejects document features it cannot execute rather than silently dropping them.
     require(
@@ -56,6 +56,38 @@ pub(super) fn sample_with_profile<'a>(
         .compositions
         .get(composition_id)
         .ok_or_else(|| format!("unknown composition {composition_id:?}"))?;
+    if let Some(world) = &composition.physics {
+        require(
+            !world.bodies.is_empty(),
+            "a physics world must contain at least one rigid body",
+        )?;
+        let mut body_ids = std::collections::BTreeSet::new();
+        for body in &world.bodies {
+            require(
+                project.objects.contains_key(&body.id),
+                format!(
+                    "physics body {:?} does not reference a scene object",
+                    body.id
+                ),
+            )?;
+            require(
+                body_ids.insert(body.id.as_str()),
+                format!("duplicate physics body ID {:?}", body.id),
+            )?;
+            require(
+                body.shape.is_some(),
+                format!(
+                    "physics body {:?} needs an explicit collider shape",
+                    body.id
+                ),
+            )?;
+        }
+        require(
+            (1..=1000).contains(&world.step_hz)
+                && world.gravity.iter().all(|value| value.is_finite()),
+            "physics step_hz or gravity is invalid",
+        )?;
+    }
     require(
         composition.size[0] > 0 && composition.size[1] > 0,
         "composition dimensions must be positive",
